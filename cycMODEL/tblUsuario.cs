@@ -17,8 +17,9 @@ namespace cycMODEL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tblUsuario()
         {
-            this.tblVendedor = new HashSet<tblVendedor>();
-            this.tblVerificador = new HashSet<tblVerificador>();
+            this.tblRelUsuarioRol = new HashSet<tblRelUsuarioRol>();
+            this.tblSolicitud = new HashSet<tblSolicitud>();
+            this.tblSolicitud1 = new HashSet<tblSolicitud>();
         }
     
         public int idUsuario { get; set; }
@@ -27,13 +28,13 @@ namespace cycMODEL
         public string nombre { get; set; }
         public string apellidoPaterno { get; set; }
         public string apellidoMaterno { get; set; }
-        public Nullable<int> idRol { get; set; }
         public string fechaCreacion { get; set; }
     
-        public virtual tblRol tblRol { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblVendedor> tblVendedor { get; set; }
+        public virtual ICollection<tblRelUsuarioRol> tblRelUsuarioRol { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblVerificador> tblVerificador { get; set; }
+        public virtual ICollection<tblSolicitud> tblSolicitud { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblSolicitud> tblSolicitud1 { get; set; }
     }
 }

@@ -14,6 +14,12 @@ namespace cycMODEL
     
     public partial class tblReferencia
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tblReferencia()
+        {
+            this.tblDireccionReferencia = new HashSet<tblDireccionReferencia>();
+        }
+    
         public int idReferencia { get; set; }
         public string nombre { get; set; }
         public string apellidoPaterno { get; set; }
@@ -25,7 +31,8 @@ namespace cycMODEL
         public Nullable<int> idSolicitud { get; set; }
         public Nullable<int> idDireccion { get; set; }
     
-        public virtual tblDireccion tblDireccion { get; set; }
         public virtual tblSolicitud tblSolicitud { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblDireccionReferencia> tblDireccionReferencia { get; set; }
     }
 }

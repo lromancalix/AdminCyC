@@ -17,7 +17,8 @@ namespace cycMODEL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tblCliente()
         {
-            this.tblRelDocumentoCliente = new HashSet<tblRelDocumentoCliente>();
+            this.tblDireccionCliente = new HashSet<tblDireccionCliente>();
+            this.tblRelSolicitudDocumento = new HashSet<tblRelSolicitudDocumento>();
         }
     
         public int idCliente { get; set; }
@@ -31,15 +32,15 @@ namespace cycMODEL
         public Nullable<int> idSolicitud { get; set; }
         public Nullable<int> idEmpleo { get; set; }
         public Nullable<int> idEstadoCivil { get; set; }
-        public Nullable<int> idDireccion { get; set; }
         public string celular { get; set; }
         public string lada { get; set; }
         public string correo { get; set; }
     
-        public virtual tblDireccion tblDireccion { get; set; }
         public virtual tblEmpleo tblEmpleo { get; set; }
         public virtual tblSolicitud tblSolicitud { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblRelDocumentoCliente> tblRelDocumentoCliente { get; set; }
+        public virtual ICollection<tblDireccionCliente> tblDireccionCliente { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblRelSolicitudDocumento> tblRelSolicitudDocumento { get; set; }
     }
 }

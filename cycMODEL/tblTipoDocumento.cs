@@ -17,7 +17,7 @@ namespace cycMODEL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tblTipoDocumento()
         {
-            this.tblDocumento = new HashSet<tblDocumento>();
+            this.tblRelSolicitudDocumento = new HashSet<tblRelSolicitudDocumento>();
         }
     
         public int idTipoDocumento { get; set; }
@@ -25,6 +25,6 @@ namespace cycMODEL
         public string activo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblDocumento> tblDocumento { get; set; }
+        public virtual ICollection<tblRelSolicitudDocumento> tblRelSolicitudDocumento { get; set; }
     }
 }

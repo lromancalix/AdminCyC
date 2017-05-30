@@ -12,28 +12,21 @@ namespace cycMODEL
     using System;
     using System.Collections.Generic;
     
-    public partial class tblDocumento
+    public partial class tblRelSolicitudDocumento
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tblDocumento()
-        {
-            this.tblRelDocumentoAval = new HashSet<tblRelDocumentoAval>();
-            this.tblRelDocumentoCliente = new HashSet<tblRelDocumentoCliente>();
-        }
-    
         public int idDocumento { get; set; }
         public Nullable<int> idEstatusDocumeto { get; set; }
         public Nullable<int> idTipoDocumento { get; set; }
         public Nullable<int> idSolicitud { get; set; }
         public Nullable<System.DateTime> fechaCreacion { get; set; }
         public string imagenDocumento { get; set; }
+        public Nullable<int> idCliente { get; set; }
+        public Nullable<int> idAval { get; set; }
     
         public virtual tblEstatusDocumento tblEstatusDocumento { get; set; }
         public virtual tblSolicitud tblSolicitud { get; set; }
         public virtual tblTipoDocumento tblTipoDocumento { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblRelDocumentoAval> tblRelDocumentoAval { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblRelDocumentoCliente> tblRelDocumentoCliente { get; set; }
+        public virtual tblAval tblAval { get; set; }
+        public virtual tblCliente tblCliente { get; set; }
     }
 }

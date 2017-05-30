@@ -17,7 +17,8 @@ namespace cycMODEL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tblAval()
         {
-            this.tblRelDocumentoAval = new HashSet<tblRelDocumentoAval>();
+            this.tblDireccionAval = new HashSet<tblDireccionAval>();
+            this.tblRelSolicitudDocumento = new HashSet<tblRelSolicitudDocumento>();
         }
     
         public int idAval { get; set; }
@@ -33,12 +34,12 @@ namespace cycMODEL
         public string correo { get; set; }
         public Nullable<int> idSolicitud { get; set; }
         public Nullable<int> idEmpleo { get; set; }
-        public Nullable<int> idDireccion { get; set; }
     
-        public virtual tblDireccion tblDireccion { get; set; }
         public virtual tblEmpleo tblEmpleo { get; set; }
         public virtual tblSolicitud tblSolicitud { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblRelDocumentoAval> tblRelDocumentoAval { get; set; }
+        public virtual ICollection<tblDireccionAval> tblDireccionAval { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblRelSolicitudDocumento> tblRelSolicitudDocumento { get; set; }
     }
 }

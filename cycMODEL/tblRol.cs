@@ -18,15 +18,16 @@ namespace cycMODEL
         public tblRol()
         {
             this.tblPermisoDenegadoPorRol = new HashSet<tblPermisoDenegadoPorRol>();
-            this.tblUsuario = new HashSet<tblUsuario>();
+            this.tblRelUsuarioRol = new HashSet<tblRelUsuarioRol>();
         }
     
         public int idRol { get; set; }
         public string rol { get; set; }
+        public string descripcion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblPermisoDenegadoPorRol> tblPermisoDenegadoPorRol { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblUsuario> tblUsuario { get; set; }
+        public virtual ICollection<tblRelUsuarioRol> tblRelUsuarioRol { get; set; }
     }
 }

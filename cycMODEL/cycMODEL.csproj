@@ -89,10 +89,13 @@
     <Compile Include="tblConyugue.cs">
       <DependentUpon>ModelCyC.tt</DependentUpon>
     </Compile>
-    <Compile Include="tblDireccion.cs">
+    <Compile Include="tblDireccionAval.cs">
       <DependentUpon>ModelCyC.tt</DependentUpon>
     </Compile>
-    <Compile Include="tblDocumento.cs">
+    <Compile Include="tblDireccionCliente.cs">
+      <DependentUpon>ModelCyC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDireccionReferencia.cs">
       <DependentUpon>ModelCyC.tt</DependentUpon>
     </Compile>
     <Compile Include="tblEmpleo.cs">
@@ -113,16 +116,10 @@
     <Compile Include="tblReferencia.cs">
       <DependentUpon>ModelCyC.tt</DependentUpon>
     </Compile>
-    <Compile Include="tblRelDocumentoAval.cs">
+    <Compile Include="tblRelSolicitudDocumento.cs">
       <DependentUpon>ModelCyC.tt</DependentUpon>
     </Compile>
-    <Compile Include="tblRelDocumentoCliente.cs">
-      <DependentUpon>ModelCyC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tblRelSolicitudVendedor.cs">
-      <DependentUpon>ModelCyC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tblRelSolicitudVerificador.cs">
+    <Compile Include="tblRelUsuarioRol.cs">
       <DependentUpon>ModelCyC.tt</DependentUpon>
     </Compile>
     <Compile Include="tblRol.cs">
@@ -135,12 +132,6 @@
       <DependentUpon>ModelCyC.tt</DependentUpon>
     </Compile>
     <Compile Include="tblUsuario.cs">
-      <DependentUpon>ModelCyC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tblVendedor.cs">
-      <DependentUpon>ModelCyC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tblVerificador.cs">
       <DependentUpon>ModelCyC.tt</DependentUpon>
     </Compile>
   </ItemGroup>

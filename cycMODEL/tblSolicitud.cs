@@ -17,13 +17,11 @@ namespace cycMODEL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tblSolicitud()
         {
+            this.tblConyugue = new HashSet<tblConyugue>();
+            this.tblReferencia = new HashSet<tblReferencia>();
+            this.tblRelSolicitudDocumento = new HashSet<tblRelSolicitudDocumento>();
             this.tblAval = new HashSet<tblAval>();
             this.tblCliente = new HashSet<tblCliente>();
-            this.tblConyugue = new HashSet<tblConyugue>();
-            this.tblDocumento = new HashSet<tblDocumento>();
-            this.tblReferencia = new HashSet<tblReferencia>();
-            this.tblRelSolicitudVendedor = new HashSet<tblRelSolicitudVendedor>();
-            this.tblRelSolicitudVerificador = new HashSet<tblRelSolicitudVerificador>();
         }
     
         public int idSolicitud { get; set; }
@@ -33,21 +31,22 @@ namespace cycMODEL
         public string comentarioVerificador { get; set; }
         public Nullable<int> idEstatusSolicitud { get; set; }
         public Nullable<System.DateTime> fechaCreacion { get; set; }
+        public Nullable<int> idUsuarioCaptura { get; set; }
+        public Nullable<int> idUsuarioVerificador { get; set; }
+        public Nullable<System.DateTime> fechaVerificacion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblAval> tblAval { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblCliente> tblCliente { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblConyugue> tblConyugue { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblDocumento> tblDocumento { get; set; }
         public virtual tblEstatusSolicitud tblEstatusSolicitud { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblReferencia> tblReferencia { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblRelSolicitudVendedor> tblRelSolicitudVendedor { get; set; }
+        public virtual ICollection<tblRelSolicitudDocumento> tblRelSolicitudDocumento { get; set; }
+        public virtual tblUsuario tblUsuario { get; set; }
+        public virtual tblUsuario tblUsuario1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblRelSolicitudVerificador> tblRelSolicitudVerificador { get; set; }
+        public virtual ICollection<tblAval> tblAval { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblCliente> tblCliente { get; set; }
     }
 }

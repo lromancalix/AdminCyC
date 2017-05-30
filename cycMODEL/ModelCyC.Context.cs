@@ -28,23 +28,20 @@ namespace cycMODEL
         public virtual DbSet<tblPermiso> tblPermiso { get; set; }
         public virtual DbSet<tblPermisoDenegadoPorRol> tblPermisoDenegadoPorRol { get; set; }
         public virtual DbSet<tblRol> tblRol { get; set; }
-        public virtual DbSet<tblUsuario> tblUsuario { get; set; }
-        public virtual DbSet<tblAval> tblAval { get; set; }
-        public virtual DbSet<tblCliente> tblCliente { get; set; }
         public virtual DbSet<tblConyugue> tblConyugue { get; set; }
-        public virtual DbSet<tblDireccion> tblDireccion { get; set; }
-        public virtual DbSet<tblDocumento> tblDocumento { get; set; }
         public virtual DbSet<tblEmpleo> tblEmpleo { get; set; }
         public virtual DbSet<tblEstatusDocumento> tblEstatusDocumento { get; set; }
         public virtual DbSet<tblEstatusSolicitud> tblEstatusSolicitud { get; set; }
         public virtual DbSet<tblReferencia> tblReferencia { get; set; }
-        public virtual DbSet<tblRelDocumentoAval> tblRelDocumentoAval { get; set; }
-        public virtual DbSet<tblRelDocumentoCliente> tblRelDocumentoCliente { get; set; }
-        public virtual DbSet<tblRelSolicitudVendedor> tblRelSolicitudVendedor { get; set; }
-        public virtual DbSet<tblRelSolicitudVerificador> tblRelSolicitudVerificador { get; set; }
         public virtual DbSet<tblSolicitud> tblSolicitud { get; set; }
         public virtual DbSet<tblTipoDocumento> tblTipoDocumento { get; set; }
-        public virtual DbSet<tblVendedor> tblVendedor { get; set; }
-        public virtual DbSet<tblVerificador> tblVerificador { get; set; }
+        public virtual DbSet<tblDireccionAval> tblDireccionAval { get; set; }
+        public virtual DbSet<tblDireccionCliente> tblDireccionCliente { get; set; }
+        public virtual DbSet<tblDireccionReferencia> tblDireccionReferencia { get; set; }
+        public virtual DbSet<tblRelSolicitudDocumento> tblRelSolicitudDocumento { get; set; }
+        public virtual DbSet<tblRelUsuarioRol> tblRelUsuarioRol { get; set; }
+        public virtual DbSet<tblUsuario> tblUsuario { get; set; }
+        public virtual DbSet<tblAval> tblAval { get; set; }
+        public virtual DbSet<tblCliente> tblCliente { get; set; }
     }
 }

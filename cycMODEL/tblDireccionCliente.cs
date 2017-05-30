@@ -12,13 +12,21 @@ namespace cycMODEL
     using System;
     using System.Collections.Generic;
     
-    public partial class tblRelDocumentoCliente
+    public partial class tblDireccionCliente
     {
-        public int idRelDocumentoCliente { get; set; }
-        public Nullable<int> idDocumento { get; set; }
+        public int idDireccion { get; set; }
+        public Nullable<int> idColonia { get; set; }
+        public string calle { get; set; }
+        public string direccion { get; set; }
+        public string codigoPostal { get; set; }
+        public string manzana { get; set; }
+        public string lote { get; set; }
+        public string numeroInterior { get; set; }
+        public string numeroExterior { get; set; }
+        public string cruzamientos { get; set; }
+        public string comentarios { get; set; }
         public Nullable<int> idCliente { get; set; }
     
         public virtual tblCliente tblCliente { get; set; }
-        public virtual tblDocumento tblDocumento { get; set; }
     }
 }

@@ -17,9 +17,9 @@ namespace cycMODEL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tblEmpleo()
         {
+            this.tblConyugue = new HashSet<tblConyugue>();
             this.tblAval = new HashSet<tblAval>();
             this.tblCliente = new HashSet<tblCliente>();
-            this.tblConyugue = new HashSet<tblConyugue>();
         }
     
         public int idEmpleo { get; set; }
@@ -32,11 +32,10 @@ namespace cycMODEL
         public Nullable<int> idDireccion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblConyugue> tblConyugue { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblAval> tblAval { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblCliente> tblCliente { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblConyugue> tblConyugue { get; set; }
-        public virtual tblDireccion tblDireccion { get; set; }
     }
 }

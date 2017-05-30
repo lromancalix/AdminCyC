@@ -12,19 +12,14 @@ namespace cycMODEL
     using System;
     using System.Collections.Generic;
     
-    public partial class tblVerificador
+    public partial class tblRelUsuarioRol
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tblVerificador()
-        {
-            this.tblRelSolicitudVerificador = new HashSet<tblRelSolicitudVerificador>();
-        }
-    
-        public int idVerificador { get; set; }
+        public int idRelUsuarioRol { get; set; }
         public Nullable<int> idUsuario { get; set; }
+        public Nullable<int> idRol { get; set; }
+        public Nullable<int> fechaCreacion { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblRelSolicitudVerificador> tblRelSolicitudVerificador { get; set; }
+        public virtual tblRol tblRol { get; set; }
         public virtual tblUsuario tblUsuario { get; set; }
     }
 }
