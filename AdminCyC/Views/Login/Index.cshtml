@@ -1,0 +1,90 @@
+﻿@{ 
+    Layout = null;
+        
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@ViewBag.Title</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/assets/css/AdminLTE.min.css" rel="stylesheet" />
+    <link href="~/assets/css/skin-blue.min.css" rel="stylesheet" />
+    <link href="~/assets/plugins/iCheck/flat/blue.css" rel="stylesheet" />
+
+    <link href="~/assets/css/please-wait.css" rel="stylesheet" />
+    @Styles.Render("~/Content/validate")
+    <link href="~/Content/cssAdminCyC/login.css" rel="stylesheet" />
+
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/assets/js/please-wait.min.js"></script>
+    @Scripts.Render("~/bundles/jqueryval")
+</head>
+<body class="hold-transition login-page loginBodyCyC">
+    <div class="login-box">
+        <!--LOGO-->
+        <div class="login-logo">
+            <b>Admin</b>CyC
+        </div><!--/ LOGO-->
+        <!-- FORMULARIO DE LOGIN -->
+        <div class="login-box-body loginBoxCyC">
+            <p class="login-box-msg">Ingresa tus datos para iniciar sesión</p>
+            <form action="../../index2.html" method="post" >
+                <div id="loginForm" class="validationEngineContainer">
+                    @Html.AntiForgeryToken()
+                    <div class="form-group has-feedback">
+                        <input type="email"
+                               id="txtUsuario"
+                               class="form-control validate[required]"
+                               placeholder="Usuario"
+                               data-errormessage-value-missing="campo requerido!">
+                        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    </div>
+
+                    <div class="form-group has-feedback">
+                        <input type="password"
+                               id="txtContrasena"
+                               class="form-control validate[required]"
+                               placeholder="Contraseña"
+                               data-errormessage-value-missing="campo requerido!">
+                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <button id="btnLogin"
+                                    type="button"
+                                    class="btn btn-primary btn-block btn-flat"
+                                    data-bind="click: singUp">
+                                Entrar
+                            </button>
+                        </div>
+                    </div>
+
+                    @Html.ActionLink("Home", "Index", "Home")
+                </div>
+            </form>
+
+
+        </div><!--/ FORMULARIO DE LOGIN-->
+
+    </div>
+    <!-- /.login-box -->
+    <!-- jQuery 2.2.3 -->
+  
+    <script src="~/assets/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <script src="~/assets/plugins/fastclick/fastclick.min.js"></script>
+    <script src="~/assets/js/app.min.js"></script>
+    <script src="~/assets/js/demo.js"></script>
+    <script src="~/assets/js/AdminLTE.js"></script>
+    <script src="~/assets/plugins/iCheck/icheck.min.js"></script>
+    <script src="~/Scripts/CyC/CyC.js"></script>
+    <script src="~/Scripts/CyC/login.js"></script>
+
+</body>
+</html>

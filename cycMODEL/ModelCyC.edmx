@@ -1,0 +1,1738 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="dbCyCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblAval">
+          <Key>
+            <PropertyRef Name="idAval" />
+          </Key>
+          <Property Name="idAval" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="apellidoPaterno" Type="varchar" MaxLength="50" />
+          <Property Name="apellidoMaterno" Type="varchar" MaxLength="50" />
+          <Property Name="rfc" Type="varchar" MaxLength="50" />
+          <Property Name="fechaNacimiento" Type="date" />
+          <Property Name="fechaCreacion" Type="datetime" />
+          <Property Name="sexo" Type="varchar" MaxLength="10" />
+          <Property Name="lada" Type="varchar" MaxLength="5" />
+          <Property Name="celular" Type="varchar" MaxLength="20" />
+          <Property Name="correo" Type="varchar" MaxLength="50" />
+          <Property Name="idSolicitud" Type="int" />
+          <Property Name="idEmpleo" Type="int" />
+          <Property Name="idDireccion" Type="int" />
+        </EntityType>
+        <EntityType Name="tblCliente">
+          <Key>
+            <PropertyRef Name="idCliente" />
+          </Key>
+          <Property Name="idCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="apellidoPaterno" Type="varchar" MaxLength="50" />
+          <Property Name="apellidoMaterno" Type="varchar" MaxLength="50" />
+          <Property Name="rfc" Type="varchar" MaxLength="50" />
+          <Property Name="fechaNacimiento" Type="date" />
+          <Property Name="sexo" Type="varchar" MaxLength="10" />
+          <Property Name="fechaCreacion" Type="datetime" />
+          <Property Name="idSolicitud" Type="int" />
+          <Property Name="idEmpleo" Type="int" />
+          <Property Name="idEstadoCivil" Type="int" />
+          <Property Name="idDireccion" Type="int" />
+          <Property Name="celular" Type="varchar" MaxLength="20" />
+          <Property Name="lada" Type="varchar" MaxLength="5" />
+          <Property Name="correo" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblConyugue">
+          <Key>
+            <PropertyRef Name="idConyugue" />
+          </Key>
+          <Property Name="idConyugue" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="apellidoPaterno" Type="varchar" MaxLength="50" />
+          <Property Name="apellidoMaterno" Type="varchar" MaxLength="50" />
+          <Property Name="celular" Type="varchar" MaxLength="20" />
+          <Property Name="lada" Type="varchar" MaxLength="5" />
+          <Property Name="correo" Type="varchar" MaxLength="50" />
+          <Property Name="idSolicitud" Type="int" />
+          <Property Name="idEmpleo" Type="int" />
+        </EntityType>
+        <EntityType Name="tblDireccion">
+          <Key>
+            <PropertyRef Name="idDireccion" />
+          </Key>
+          <Property Name="idDireccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idEstado" Type="int" />
+          <Property Name="idMunicipio" Type="int" />
+          <Property Name="idColonia" Type="int" />
+          <Property Name="calle" Type="varchar" MaxLength="50" />
+          <Property Name="direccion" Type="varchar" MaxLength="150" />
+          <Property Name="codigoPostal" Type="varchar" MaxLength="5" />
+          <Property Name="manzana" Type="varchar" MaxLength="10" />
+          <Property Name="lote" Type="varchar" MaxLength="10" />
+          <Property Name="numeroInterior" Type="nchar" MaxLength="10" />
+          <Property Name="numeroExterior" Type="nchar" MaxLength="10" />
+          <Property Name="cruzamientos" Type="varchar" MaxLength="150" />
+          <Property Name="comentarios" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="tblDocumento">
+          <Key>
+            <PropertyRef Name="idDocumento" />
+          </Key>
+          <Property Name="idDocumento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idEstatusDocumeto" Type="int" />
+          <Property Name="idTipoDocumento" Type="int" />
+          <Property Name="idSolicitud" Type="int" />
+          <Property Name="fechaCreacion" Type="datetime" />
+          <Property Name="imagenDocumento" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="tblEmpleo">
+          <Key>
+            <PropertyRef Name="idEmpleo" />
+          </Key>
+          <Property Name="idEmpleo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombreEmpresa" Type="varchar" MaxLength="50" />
+          <Property Name="departamento" Type="varchar" MaxLength="50" />
+          <Property Name="puesto" Type="varchar" MaxLength="50" />
+          <Property Name="giroEmpresa" Type="varchar" MaxLength="50" />
+          <Property Name="telefono" Type="varchar" MaxLength="20" />
+          <Property Name="ext" Type="varchar" MaxLength="10" />
+          <Property Name="idDireccion" Type="int" />
+        </EntityType>
+        <EntityType Name="tblEstatusDocumento">
+          <Key>
+            <PropertyRef Name="idEstatusDocumento" />
+          </Key>
+          <Property Name="idEstatusDocumento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="estatusDocumento" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblEstatusSolicitud">
+          <Key>
+            <PropertyRef Name="idEstatusSolicitud" />
+          </Key>
+          <Property Name="idEstatusSolicitud" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="estatusSolicitud" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblPermiso">
+          <Key>
+            <PropertyRef Name="idPermiso" />
+          </Key>
+          <Property Name="idPermiso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="permiso" Type="varchar" MaxLength="50" />
+          <Property Name="pagina" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblPermisoDenegadoPorRol">
+          <Key>
+            <PropertyRef Name="idPermisoDenegado" />
+          </Key>
+          <Property Name="idPermisoDenegado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idRol" Type="int" />
+          <Property Name="idPermiso" Type="int" />
+        </EntityType>
+        <EntityType Name="tblReferencia">
+          <Key>
+            <PropertyRef Name="idReferencia" />
+          </Key>
+          <Property Name="idReferencia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="apellidoPaterno" Type="varchar" MaxLength="50" />
+          <Property Name="apellidoMaterno" Type="varchar" MaxLength="50" />
+          <Property Name="lada" Type="varchar" MaxLength="5" />
+          <Property Name="celular" Type="varbinary" MaxLength="20" />
+          <Property Name="correo" Type="varchar" MaxLength="50" />
+          <Property Name="fechaCreacion" Type="datetime" />
+          <Property Name="idSolicitud" Type="int" />
+          <Property Name="idDireccion" Type="int" />
+        </EntityType>
+        <EntityType Name="tblRelDocumentoAval">
+          <Key>
+            <PropertyRef Name="idRelDocumentoAval" />
+          </Key>
+          <Property Name="idRelDocumentoAval" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idDocumento" Type="int" />
+          <Property Name="idAval" Type="int" />
+        </EntityType>
+        <EntityType Name="tblRelDocumentoCliente">
+          <Key>
+            <PropertyRef Name="idRelDocumentoCliente" />
+          </Key>
+          <Property Name="idRelDocumentoCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idDocumento" Type="int" />
+          <Property Name="idCliente" Type="int" />
+        </EntityType>
+        <EntityType Name="tblRelSolicitudVendedor">
+          <Key>
+            <PropertyRef Name="idRelSolicitudVendedor" />
+          </Key>
+          <Property Name="idRelSolicitudVendedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idSolicitud" Type="int" />
+          <Property Name="idVendedor" Type="int" />
+        </EntityType>
+        <EntityType Name="tblRelSolicitudVerificador">
+          <Key>
+            <PropertyRef Name="idRelSolicitudVerificador" />
+          </Key>
+          <Property Name="idRelSolicitudVerificador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idSolicitud" Type="int" />
+          <Property Name="idVerificador" Type="int" />
+        </EntityType>
+        <EntityType Name="tblRol">
+          <Key>
+            <PropertyRef Name="idRol" />
+          </Key>
+          <Property Name="idRol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="rol" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblSolicitud">
+          <Key>
+            <PropertyRef Name="idSolicitud" />
+          </Key>
+          <Property Name="idSolicitud" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="folio" Type="varchar" MaxLength="25" />
+          <Property Name="score" Type="varchar" MaxLength="50" />
+          <Property Name="comentarioVendedor" Type="varchar" MaxLength="250" />
+          <Property Name="comentarioVerificador" Type="varchar" MaxLength="250" />
+          <Property Name="idEstatusSolicitud" Type="int" />
+          <Property Name="fechaCreacion" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblTipoDocumento">
+          <Key>
+            <PropertyRef Name="idTipoDocumento" />
+          </Key>
+          <Property Name="idTipoDocumento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="documento" Type="varchar" MaxLength="50" />
+          <Property Name="activo" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="tblUsuario">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="usuario" Type="varchar" MaxLength="50" />
+          <Property Name="contrasena" Type="varchar" MaxLength="50" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="apellidoPaterno" Type="varchar" MaxLength="50" />
+          <Property Name="apellidoMaterno" Type="varchar" MaxLength="50" />
+          <Property Name="idRol" Type="int" />
+          <Property Name="fechaCreacion" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="tblVendedor">
+          <Key>
+            <PropertyRef Name="idVendedor" />
+          </Key>
+          <Property Name="idVendedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idUsuario" Type="int" />
+        </EntityType>
+        <EntityType Name="tblVerificador">
+          <Key>
+            <PropertyRef Name="idVerificador" />
+          </Key>
+          <Property Name="idVerificador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idUsuario" Type="int" />
+        </EntityType>
+        <Association Name="FK_tblAval_tblDireccion">
+          <End Role="tblDireccion" Type="Self.tblDireccion" Multiplicity="0..1" />
+          <End Role="tblAval" Type="Self.tblAval" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDireccion">
+              <PropertyRef Name="idDireccion" />
+            </Principal>
+            <Dependent Role="tblAval">
+              <PropertyRef Name="idDireccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblAval_tblEmpleo">
+          <End Role="tblEmpleo" Type="Self.tblEmpleo" Multiplicity="0..1" />
+          <End Role="tblAval" Type="Self.tblAval" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblEmpleo">
+              <PropertyRef Name="idEmpleo" />
+            </Principal>
+            <Dependent Role="tblAval">
+              <PropertyRef Name="idEmpleo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblAval_tblSolicitud">
+          <End Role="tblSolicitud" Type="Self.tblSolicitud" Multiplicity="0..1" />
+          <End Role="tblAval" Type="Self.tblAval" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblSolicitud">
+              <PropertyRef Name="idSolicitud" />
+            </Principal>
+            <Dependent Role="tblAval">
+              <PropertyRef Name="idSolicitud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblCliente_tblDireccion">
+          <End Role="tblDireccion" Type="Self.tblDireccion" Multiplicity="0..1" />
+          <End Role="tblCliente" Type="Self.tblCliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDireccion">
+              <PropertyRef Name="idDireccion" />
+            </Principal>
+            <Dependent Role="tblCliente">
+              <PropertyRef Name="idDireccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblCliente_tblEmpleo">
+          <End Role="tblEmpleo" Type="Self.tblEmpleo" Multiplicity="0..1" />
+          <End Role="tblCliente" Type="Self.tblCliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblEmpleo">
+              <PropertyRef Name="idEmpleo" />
+            </Principal>
+            <Dependent Role="tblCliente">
+              <PropertyRef Name="idEmpleo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblCliente_tblSolicitud">
+          <End Role="tblSolicitud" Type="Self.tblSolicitud" Multiplicity="0..1" />
+          <End Role="tblCliente" Type="Self.tblCliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblSolicitud">
+              <PropertyRef Name="idSolicitud" />
+            </Principal>
+            <Dependent Role="tblCliente">
+              <PropertyRef Name="idSolicitud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblConyugue_tblEmpleo">
+          <End Role="tblEmpleo" Type="Self.tblEmpleo" Multiplicity="0..1" />
+          <End Role="tblConyugue" Type="Self.tblConyugue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblEmpleo">
+              <PropertyRef Name="idEmpleo" />
+            </Principal>
+            <Dependent Role="tblConyugue">
+              <PropertyRef Name="idEmpleo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblConyugue_tblSolicitud">
+          <End Role="tblSolicitud" Type="Self.tblSolicitud" Multiplicity="0..1" />
+          <End Role="tblConyugue" Type="Self.tblConyugue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblSolicitud">
+              <PropertyRef Name="idSolicitud" />
+            </Principal>
+            <Dependent Role="tblConyugue">
+              <PropertyRef Name="idSolicitud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblDocumento_tblEstatusDocumento">
+          <End Role="tblEstatusDocumento" Type="Self.tblEstatusDocumento" Multiplicity="0..1" />
+          <End Role="tblDocumento" Type="Self.tblDocumento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblEstatusDocumento">
+              <PropertyRef Name="idEstatusDocumento" />
+            </Principal>
+            <Dependent Role="tblDocumento">
+              <PropertyRef Name="idEstatusDocumeto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblDocumento_tblSolicitud">
+          <End Role="tblSolicitud" Type="Self.tblSolicitud" Multiplicity="0..1" />
+          <End Role="tblDocumento" Type="Self.tblDocumento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblSolicitud">
+              <PropertyRef Name="idSolicitud" />
+            </Principal>
+            <Dependent Role="tblDocumento">
+              <PropertyRef Name="idSolicitud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblDocumento_tblTipoDocumento">
+          <End Role="tblTipoDocumento" Type="Self.tblTipoDocumento" Multiplicity="0..1" />
+          <End Role="tblDocumento" Type="Self.tblDocumento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblTipoDocumento">
+              <PropertyRef Name="idTipoDocumento" />
+            </Principal>
+            <Dependent Role="tblDocumento">
+              <PropertyRef Name="idTipoDocumento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblEmpleo_tblDireccion">
+          <End Role="tblDireccion" Type="Self.tblDireccion" Multiplicity="0..1" />
+          <End Role="tblEmpleo" Type="Self.tblEmpleo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDireccion">
+              <PropertyRef Name="idDireccion" />
+            </Principal>
+            <Dependent Role="tblEmpleo">
+              <PropertyRef Name="idDireccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblPermisoDenegadoPorRol_tblPermiso">
+          <End Role="tblPermiso" Type="Self.tblPermiso" Multiplicity="0..1" />
+          <End Role="tblPermisoDenegadoPorRol" Type="Self.tblPermisoDenegadoPorRol" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblPermiso">
+              <PropertyRef Name="idPermiso" />
+            </Principal>
+            <Dependent Role="tblPermisoDenegadoPorRol">
+              <PropertyRef Name="idPermiso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblPermisoDenegadoPorRol_tblRol">
+          <End Role="tblRol" Type="Self.tblRol" Multiplicity="0..1" />
+          <End Role="tblPermisoDenegadoPorRol" Type="Self.tblPermisoDenegadoPorRol" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblRol">
+              <PropertyRef Name="idRol" />
+            </Principal>
+            <Dependent Role="tblPermisoDenegadoPorRol">
+              <PropertyRef Name="idRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblReferencia_tblDireccion">
+          <End Role="tblDireccion" Type="Self.tblDireccion" Multiplicity="0..1" />
+          <End Role="tblReferencia" Type="Self.tblReferencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDireccion">
+              <PropertyRef Name="idDireccion" />
+            </Principal>
+            <Dependent Role="tblReferencia">
+              <PropertyRef Name="idDireccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblReferencia_tblSolicitud">
+          <End Role="tblSolicitud" Type="Self.tblSolicitud" Multiplicity="0..1" />
+          <End Role="tblReferencia" Type="Self.tblReferencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblSolicitud">
+              <PropertyRef Name="idSolicitud" />
+            </Principal>
+            <Dependent Role="tblReferencia">
+              <PropertyRef Name="idSolicitud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblRelDocumentoAval_tblAval">
+          <End Role="tblAval" Type="Self.tblAval" Multiplicity="0..1" />
+          <End Role="tblRelDocumentoAval" Type="Self.tblRelDocumentoAval" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAval">
+              <PropertyRef Name="idAval" />
+            </Principal>
+            <Dependent Role="tblRelDocumentoAval">
+              <PropertyRef Name="idAval" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblRelDocumentoAval_tblDocumento">
+          <End Role="tblDocumento" Type="Self.tblDocumento" Multiplicity="0..1" />
+          <End Role="tblRelDocumentoAval" Type="Self.tblRelDocumentoAval" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDocumento">
+              <PropertyRef Name="idDocumento" />
+            </Principal>
+            <Dependent Role="tblRelDocumentoAval">
+              <PropertyRef Name="idDocumento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblRelDocumentoCliente_tblCliente">
+          <End Role="tblCliente" Type="Self.tblCliente" Multiplicity="0..1" />
+          <End Role="tblRelDocumentoCliente" Type="Self.tblRelDocumentoCliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCliente">
+              <PropertyRef Name="idCliente" />
+            </Principal>
+            <Dependent Role="tblRelDocumentoCliente">
+              <PropertyRef Name="idCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblRelDocumentoCliente_tblDocumento">
+          <End Role="tblDocumento" Type="Self.tblDocumento" Multiplicity="0..1" />
+          <End Role="tblRelDocumentoCliente" Type="Self.tblRelDocumentoCliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDocumento">
+              <PropertyRef Name="idDocumento" />
+            </Principal>
+            <Dependent Role="tblRelDocumentoCliente">
+              <PropertyRef Name="idDocumento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblRelSolicitudVendedor_tblSolicitud">
+          <End Role="tblSolicitud" Type="Self.tblSolicitud" Multiplicity="0..1" />
+          <End Role="tblRelSolicitudVendedor" Type="Self.tblRelSolicitudVendedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblSolicitud">
+              <PropertyRef Name="idSolicitud" />
+            </Principal>
+            <Dependent Role="tblRelSolicitudVendedor">
+              <PropertyRef Name="idSolicitud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblRelSolicitudVendedor_tblVendedor">
+          <End Role="tblVendedor" Type="Self.tblVendedor" Multiplicity="0..1" />
+          <End Role="tblRelSolicitudVendedor" Type="Self.tblRelSolicitudVendedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblVendedor">
+              <PropertyRef Name="idVendedor" />
+            </Principal>
+            <Dependent Role="tblRelSolicitudVendedor">
+              <PropertyRef Name="idVendedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblRelSolicitudVerificador_tblSolicitud">
+          <End Role="tblSolicitud" Type="Self.tblSolicitud" Multiplicity="0..1" />
+          <End Role="tblRelSolicitudVerificador" Type="Self.tblRelSolicitudVerificador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblSolicitud">
+              <PropertyRef Name="idSolicitud" />
+            </Principal>
+            <Dependent Role="tblRelSolicitudVerificador">
+              <PropertyRef Name="idSolicitud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblRelSolicitudVerificador_tblVerificador">
+          <End Role="tblVerificador" Type="Self.tblVerificador" Multiplicity="0..1" />
+          <End Role="tblRelSolicitudVerificador" Type="Self.tblRelSolicitudVerificador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblVerificador">
+              <PropertyRef Name="idVerificador" />
+            </Principal>
+            <Dependent Role="tblRelSolicitudVerificador">
+              <PropertyRef Name="idVerificador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblSolicitud_tblEstatusSolicitud">
+          <End Role="tblEstatusSolicitud" Type="Self.tblEstatusSolicitud" Multiplicity="0..1" />
+          <End Role="tblSolicitud" Type="Self.tblSolicitud" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblEstatusSolicitud">
+              <PropertyRef Name="idEstatusSolicitud" />
+            </Principal>
+            <Dependent Role="tblSolicitud">
+              <PropertyRef Name="idEstatusSolicitud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblUsuario_tblRol">
+          <End Role="tblRol" Type="Self.tblRol" Multiplicity="0..1" />
+          <End Role="tblUsuario" Type="Self.tblUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblRol">
+              <PropertyRef Name="idRol" />
+            </Principal>
+            <Dependent Role="tblUsuario">
+              <PropertyRef Name="idRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblVendedor_tblUsuario">
+          <End Role="tblUsuario" Type="Self.tblUsuario" Multiplicity="0..1" />
+          <End Role="tblVendedor" Type="Self.tblVendedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUsuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="tblVendedor">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblVerificador_tblUsuario">
+          <End Role="tblUsuario" Type="Self.tblUsuario" Multiplicity="0..1" />
+          <End Role="tblVerificador" Type="Self.tblVerificador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUsuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="tblVerificador">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dbCyCModelStoreContainer">
+          <EntitySet Name="tblAval" EntityType="Self.tblAval" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCliente" EntityType="Self.tblCliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblConyugue" EntityType="Self.tblConyugue" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblDireccion" EntityType="Self.tblDireccion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblDocumento" EntityType="Self.tblDocumento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblEmpleo" EntityType="Self.tblEmpleo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblEstatusDocumento" EntityType="Self.tblEstatusDocumento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblEstatusSolicitud" EntityType="Self.tblEstatusSolicitud" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblPermiso" EntityType="Self.tblPermiso" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblPermisoDenegadoPorRol" EntityType="Self.tblPermisoDenegadoPorRol" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblReferencia" EntityType="Self.tblReferencia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblRelDocumentoAval" EntityType="Self.tblRelDocumentoAval" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblRelDocumentoCliente" EntityType="Self.tblRelDocumentoCliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblRelSolicitudVendedor" EntityType="Self.tblRelSolicitudVendedor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblRelSolicitudVerificador" EntityType="Self.tblRelSolicitudVerificador" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblRol" EntityType="Self.tblRol" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblSolicitud" EntityType="Self.tblSolicitud" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblTipoDocumento" EntityType="Self.tblTipoDocumento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblUsuario" EntityType="Self.tblUsuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblVendedor" EntityType="Self.tblVendedor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblVerificador" EntityType="Self.tblVerificador" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_tblAval_tblDireccion" Association="Self.FK_tblAval_tblDireccion">
+            <End Role="tblDireccion" EntitySet="tblDireccion" />
+            <End Role="tblAval" EntitySet="tblAval" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblAval_tblEmpleo" Association="Self.FK_tblAval_tblEmpleo">
+            <End Role="tblEmpleo" EntitySet="tblEmpleo" />
+            <End Role="tblAval" EntitySet="tblAval" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblAval_tblSolicitud" Association="Self.FK_tblAval_tblSolicitud">
+            <End Role="tblSolicitud" EntitySet="tblSolicitud" />
+            <End Role="tblAval" EntitySet="tblAval" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblCliente_tblDireccion" Association="Self.FK_tblCliente_tblDireccion">
+            <End Role="tblDireccion" EntitySet="tblDireccion" />
+            <End Role="tblCliente" EntitySet="tblCliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblCliente_tblEmpleo" Association="Self.FK_tblCliente_tblEmpleo">
+            <End Role="tblEmpleo" EntitySet="tblEmpleo" />
+            <End Role="tblCliente" EntitySet="tblCliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblCliente_tblSolicitud" Association="Self.FK_tblCliente_tblSolicitud">
+            <End Role="tblSolicitud" EntitySet="tblSolicitud" />
+            <End Role="tblCliente" EntitySet="tblCliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblConyugue_tblEmpleo" Association="Self.FK_tblConyugue_tblEmpleo">
+            <End Role="tblEmpleo" EntitySet="tblEmpleo" />
+            <End Role="tblConyugue" EntitySet="tblConyugue" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblConyugue_tblSolicitud" Association="Self.FK_tblConyugue_tblSolicitud">
+            <End Role="tblSolicitud" EntitySet="tblSolicitud" />
+            <End Role="tblConyugue" EntitySet="tblConyugue" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblDocumento_tblEstatusDocumento" Association="Self.FK_tblDocumento_tblEstatusDocumento">
+            <End Role="tblEstatusDocumento" EntitySet="tblEstatusDocumento" />
+            <End Role="tblDocumento" EntitySet="tblDocumento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblDocumento_tblSolicitud" Association="Self.FK_tblDocumento_tblSolicitud">
+            <End Role="tblSolicitud" EntitySet="tblSolicitud" />
+            <End Role="tblDocumento" EntitySet="tblDocumento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblDocumento_tblTipoDocumento" Association="Self.FK_tblDocumento_tblTipoDocumento">
+            <End Role="tblTipoDocumento" EntitySet="tblTipoDocumento" />
+            <End Role="tblDocumento" EntitySet="tblDocumento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblEmpleo_tblDireccion" Association="Self.FK_tblEmpleo_tblDireccion">
+            <End Role="tblDireccion" EntitySet="tblDireccion" />
+            <End Role="tblEmpleo" EntitySet="tblEmpleo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblPermisoDenegadoPorRol_tblPermiso" Association="Self.FK_tblPermisoDenegadoPorRol_tblPermiso">
+            <End Role="tblPermiso" EntitySet="tblPermiso" />
+            <End Role="tblPermisoDenegadoPorRol" EntitySet="tblPermisoDenegadoPorRol" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblPermisoDenegadoPorRol_tblRol" Association="Self.FK_tblPermisoDenegadoPorRol_tblRol">
+            <End Role="tblRol" EntitySet="tblRol" />
+            <End Role="tblPermisoDenegadoPorRol" EntitySet="tblPermisoDenegadoPorRol" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblReferencia_tblDireccion" Association="Self.FK_tblReferencia_tblDireccion">
+            <End Role="tblDireccion" EntitySet="tblDireccion" />
+            <End Role="tblReferencia" EntitySet="tblReferencia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblReferencia_tblSolicitud" Association="Self.FK_tblReferencia_tblSolicitud">
+            <End Role="tblSolicitud" EntitySet="tblSolicitud" />
+            <End Role="tblReferencia" EntitySet="tblReferencia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblRelDocumentoAval_tblAval" Association="Self.FK_tblRelDocumentoAval_tblAval">
+            <End Role="tblAval" EntitySet="tblAval" />
+            <End Role="tblRelDocumentoAval" EntitySet="tblRelDocumentoAval" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblRelDocumentoAval_tblDocumento" Association="Self.FK_tblRelDocumentoAval_tblDocumento">
+            <End Role="tblDocumento" EntitySet="tblDocumento" />
+            <End Role="tblRelDocumentoAval" EntitySet="tblRelDocumentoAval" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblRelDocumentoCliente_tblCliente" Association="Self.FK_tblRelDocumentoCliente_tblCliente">
+            <End Role="tblCliente" EntitySet="tblCliente" />
+            <End Role="tblRelDocumentoCliente" EntitySet="tblRelDocumentoCliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblRelDocumentoCliente_tblDocumento" Association="Self.FK_tblRelDocumentoCliente_tblDocumento">
+            <End Role="tblDocumento" EntitySet="tblDocumento" />
+            <End Role="tblRelDocumentoCliente" EntitySet="tblRelDocumentoCliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblRelSolicitudVendedor_tblSolicitud" Association="Self.FK_tblRelSolicitudVendedor_tblSolicitud">
+            <End Role="tblSolicitud" EntitySet="tblSolicitud" />
+            <End Role="tblRelSolicitudVendedor" EntitySet="tblRelSolicitudVendedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblRelSolicitudVendedor_tblVendedor" Association="Self.FK_tblRelSolicitudVendedor_tblVendedor">
+            <End Role="tblVendedor" EntitySet="tblVendedor" />
+            <End Role="tblRelSolicitudVendedor" EntitySet="tblRelSolicitudVendedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblRelSolicitudVerificador_tblSolicitud" Association="Self.FK_tblRelSolicitudVerificador_tblSolicitud">
+            <End Role="tblSolicitud" EntitySet="tblSolicitud" />
+            <End Role="tblRelSolicitudVerificador" EntitySet="tblRelSolicitudVerificador" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblRelSolicitudVerificador_tblVerificador" Association="Self.FK_tblRelSolicitudVerificador_tblVerificador">
+            <End Role="tblVerificador" EntitySet="tblVerificador" />
+            <End Role="tblRelSolicitudVerificador" EntitySet="tblRelSolicitudVerificador" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblSolicitud_tblEstatusSolicitud" Association="Self.FK_tblSolicitud_tblEstatusSolicitud">
+            <End Role="tblEstatusSolicitud" EntitySet="tblEstatusSolicitud" />
+            <End Role="tblSolicitud" EntitySet="tblSolicitud" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblUsuario_tblRol" Association="Self.FK_tblUsuario_tblRol">
+            <End Role="tblRol" EntitySet="tblRol" />
+            <End Role="tblUsuario" EntitySet="tblUsuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblVendedor_tblUsuario" Association="Self.FK_tblVendedor_tblUsuario">
+            <End Role="tblUsuario" EntitySet="tblUsuario" />
+            <End Role="tblVendedor" EntitySet="tblVendedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblVerificador_tblUsuario" Association="Self.FK_tblVerificador_tblUsuario">
+            <End Role="tblUsuario" EntitySet="tblUsuario" />
+            <End Role="tblVerificador" EntitySet="tblVerificador" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbCyCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblPermiso">
+          <Key>
+            <PropertyRef Name="idPermiso" />
+          </Key>
+          <Property Name="idPermiso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="permiso" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pagina" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblPermisoDenegadoPorRol" Relationship="Self.FK_tblPermisoDenegadoPorRol_tblPermiso" FromRole="tblPermiso" ToRole="tblPermisoDenegadoPorRol" />
+        </EntityType>
+        <EntityType Name="tblPermisoDenegadoPorRol">
+          <Key>
+            <PropertyRef Name="idPermisoDenegado" />
+          </Key>
+          <Property Name="idPermisoDenegado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idRol" Type="Int32" />
+          <Property Name="idPermiso" Type="Int32" />
+          <NavigationProperty Name="tblPermiso" Relationship="Self.FK_tblPermisoDenegadoPorRol_tblPermiso" FromRole="tblPermisoDenegadoPorRol" ToRole="tblPermiso" />
+          <NavigationProperty Name="tblRol" Relationship="Self.FK_tblPermisoDenegadoPorRol_tblRol" FromRole="tblPermisoDenegadoPorRol" ToRole="tblRol" />
+        </EntityType>
+        <EntityType Name="tblRol">
+          <Key>
+            <PropertyRef Name="idRol" />
+          </Key>
+          <Property Name="idRol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="rol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblPermisoDenegadoPorRol" Relationship="Self.FK_tblPermisoDenegadoPorRol_tblRol" FromRole="tblRol" ToRole="tblPermisoDenegadoPorRol" />
+          <NavigationProperty Name="tblUsuario" Relationship="Self.FK_tblUsuario_tblRol" FromRole="tblRol" ToRole="tblUsuario" />
+        </EntityType>
+        <EntityType Name="tblUsuario">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="contrasena" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="apellidoPaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="apellidoMaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idRol" Type="Int32" />
+          <Property Name="fechaCreacion" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="tblRol" Relationship="Self.FK_tblUsuario_tblRol" FromRole="tblUsuario" ToRole="tblRol" />
+          <NavigationProperty Name="tblVendedor" Relationship="dbCyCModel.FK_tblVendedor_tblUsuario" FromRole="tblUsuario" ToRole="tblVendedor" />
+          <NavigationProperty Name="tblVerificador" Relationship="dbCyCModel.FK_tblVerificador_tblUsuario" FromRole="tblUsuario" ToRole="tblVerificador" />
+        </EntityType>
+        <Association Name="FK_tblPermisoDenegadoPorRol_tblPermiso">
+          <End Role="tblPermiso" Type="Self.tblPermiso" Multiplicity="0..1" />
+          <End Role="tblPermisoDenegadoPorRol" Type="Self.tblPermisoDenegadoPorRol" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblPermiso">
+              <PropertyRef Name="idPermiso" />
+            </Principal>
+            <Dependent Role="tblPermisoDenegadoPorRol">
+              <PropertyRef Name="idPermiso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblPermisoDenegadoPorRol_tblRol">
+          <End Role="tblRol" Type="Self.tblRol" Multiplicity="0..1" />
+          <End Role="tblPermisoDenegadoPorRol" Type="Self.tblPermisoDenegadoPorRol" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblRol">
+              <PropertyRef Name="idRol" />
+            </Principal>
+            <Dependent Role="tblPermisoDenegadoPorRol">
+              <PropertyRef Name="idRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblUsuario_tblRol">
+          <End Role="tblRol" Type="Self.tblRol" Multiplicity="0..1" />
+          <End Role="tblUsuario" Type="Self.tblUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblRol">
+              <PropertyRef Name="idRol" />
+            </Principal>
+            <Dependent Role="tblUsuario">
+              <PropertyRef Name="idRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dbCyCEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblPermiso" EntityType="Self.tblPermiso" />
+          <EntitySet Name="tblPermisoDenegadoPorRol" EntityType="Self.tblPermisoDenegadoPorRol" />
+          <EntitySet Name="tblRol" EntityType="Self.tblRol" />
+          <EntitySet Name="tblUsuario" EntityType="Self.tblUsuario" />
+          <AssociationSet Name="FK_tblPermisoDenegadoPorRol_tblPermiso" Association="Self.FK_tblPermisoDenegadoPorRol_tblPermiso">
+            <End Role="tblPermiso" EntitySet="tblPermiso" />
+            <End Role="tblPermisoDenegadoPorRol" EntitySet="tblPermisoDenegadoPorRol" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblPermisoDenegadoPorRol_tblRol" Association="Self.FK_tblPermisoDenegadoPorRol_tblRol">
+            <End Role="tblRol" EntitySet="tblRol" />
+            <End Role="tblPermisoDenegadoPorRol" EntitySet="tblPermisoDenegadoPorRol" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblUsuario_tblRol" Association="Self.FK_tblUsuario_tblRol">
+            <End Role="tblRol" EntitySet="tblRol" />
+            <End Role="tblUsuario" EntitySet="tblUsuario" />
+          </AssociationSet>
+          <EntitySet Name="tblAval" EntityType="dbCyCModel.tblAval" />
+          <EntitySet Name="tblCliente" EntityType="dbCyCModel.tblCliente" />
+          <EntitySet Name="tblConyugue" EntityType="dbCyCModel.tblConyugue" />
+          <EntitySet Name="tblDireccion" EntityType="dbCyCModel.tblDireccion" />
+          <EntitySet Name="tblDocumento" EntityType="dbCyCModel.tblDocumento" />
+          <EntitySet Name="tblEmpleo" EntityType="dbCyCModel.tblEmpleo" />
+          <EntitySet Name="tblEstatusDocumento" EntityType="dbCyCModel.tblEstatusDocumento" />
+          <EntitySet Name="tblEstatusSolicitud" EntityType="dbCyCModel.tblEstatusSolicitud" />
+          <EntitySet Name="tblReferencia" EntityType="dbCyCModel.tblReferencia" />
+          <EntitySet Name="tblRelDocumentoAval" EntityType="dbCyCModel.tblRelDocumentoAval" />
+          <EntitySet Name="tblRelDocumentoCliente" EntityType="dbCyCModel.tblRelDocumentoCliente" />
+          <EntitySet Name="tblRelSolicitudVendedor" EntityType="dbCyCModel.tblRelSolicitudVendedor" />
+          <EntitySet Name="tblRelSolicitudVerificador" EntityType="dbCyCModel.tblRelSolicitudVerificador" />
+          <EntitySet Name="tblSolicitud" EntityType="dbCyCModel.tblSolicitud" />
+          <EntitySet Name="tblTipoDocumento" EntityType="dbCyCModel.tblTipoDocumento" />
+          <EntitySet Name="tblVendedor" EntityType="dbCyCModel.tblVendedor" />
+          <EntitySet Name="tblVerificador" EntityType="dbCyCModel.tblVerificador" />
+          <AssociationSet Name="FK_tblAval_tblDireccion" Association="dbCyCModel.FK_tblAval_tblDireccion">
+            <End Role="tblDireccion" EntitySet="tblDireccion" />
+            <End Role="tblAval" EntitySet="tblAval" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblAval_tblEmpleo" Association="dbCyCModel.FK_tblAval_tblEmpleo">
+            <End Role="tblEmpleo" EntitySet="tblEmpleo" />
+            <End Role="tblAval" EntitySet="tblAval" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblAval_tblSolicitud" Association="dbCyCModel.FK_tblAval_tblSolicitud">
+            <End Role="tblSolicitud" EntitySet="tblSolicitud" />
+            <End Role="tblAval" EntitySet="tblAval" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblRelDocumentoAval_tblAval" Association="dbCyCModel.FK_tblRelDocumentoAval_tblAval">
+            <End Role="tblAval" EntitySet="tblAval" />
+            <End Role="tblRelDocumentoAval" EntitySet="tblRelDocumentoAval" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblCliente_tblDireccion" Association="dbCyCModel.FK_tblCliente_tblDireccion">
+            <End Role="tblDireccion" EntitySet="tblDireccion" />
+            <End Role="tblCliente" EntitySet="tblCliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblCliente_tblEmpleo" Association="dbCyCModel.FK_tblCliente_tblEmpleo">
+            <End Role="tblEmpleo" EntitySet="tblEmpleo" />
+            <End Role="tblCliente" EntitySet="tblCliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblCliente_tblSolicitud" Association="dbCyCModel.FK_tblCliente_tblSolicitud">
+            <End Role="tblSolicitud" EntitySet="tblSolicitud" />
+            <End Role="tblCliente" EntitySet="tblCliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblRelDocumentoCliente_tblCliente" Association="dbCyCModel.FK_tblRelDocumentoCliente_tblCliente">
+            <End Role="tblCliente" EntitySet="tblCliente" />
+            <End Role="tblRelDocumentoCliente" EntitySet="tblRelDocumentoCliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblConyugue_tblEmpleo" Association="dbCyCModel.FK_tblConyugue_tblEmpleo">
+            <End Role="tblEmpleo" EntitySet="tblEmpleo" />
+            <End Role="tblConyugue" EntitySet="tblConyugue" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblConyugue_tblSolicitud" Association="dbCyCModel.FK_tblConyugue_tblSolicitud">
+            <End Role="tblSolicitud" EntitySet="tblSolicitud" />
+            <End Role="tblConyugue" EntitySet="tblConyugue" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblEmpleo_tblDireccion" Association="dbCyCModel.FK_tblEmpleo_tblDireccion">
+            <End Role="tblDireccion" EntitySet="tblDireccion" />
+            <End Role="tblEmpleo" EntitySet="tblEmpleo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblReferencia_tblDireccion" Association="dbCyCModel.FK_tblReferencia_tblDireccion">
+            <End Role="tblDireccion" EntitySet="tblDireccion" />
+            <End Role="tblReferencia" EntitySet="tblReferencia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblDocumento_tblEstatusDocumento" Association="dbCyCModel.FK_tblDocumento_tblEstatusDocumento">
+            <End Role="tblEstatusDocumento" EntitySet="tblEstatusDocumento" />
+            <End Role="tblDocumento" EntitySet="tblDocumento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblDocumento_tblSolicitud" Association="dbCyCModel.FK_tblDocumento_tblSolicitud">
+            <End Role="tblSolicitud" EntitySet="tblSolicitud" />
+            <End Role="tblDocumento" EntitySet="tblDocumento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblDocumento_tblTipoDocumento" Association="dbCyCModel.FK_tblDocumento_tblTipoDocumento">
+            <End Role="tblTipoDocumento" EntitySet="tblTipoDocumento" />
+            <End Role="tblDocumento" EntitySet="tblDocumento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblRelDocumentoAval_tblDocumento" Association="dbCyCModel.FK_tblRelDocumentoAval_tblDocumento">
+            <End Role="tblDocumento" EntitySet="tblDocumento" />
+            <End Role="tblRelDocumentoAval" EntitySet="tblRelDocumentoAval" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblRelDocumentoCliente_tblDocumento" Association="dbCyCModel.FK_tblRelDocumentoCliente_tblDocumento">
+            <End Role="tblDocumento" EntitySet="tblDocumento" />
+            <End Role="tblRelDocumentoCliente" EntitySet="tblRelDocumentoCliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblSolicitud_tblEstatusSolicitud" Association="dbCyCModel.FK_tblSolicitud_tblEstatusSolicitud">
+            <End Role="tblEstatusSolicitud" EntitySet="tblEstatusSolicitud" />
+            <End Role="tblSolicitud" EntitySet="tblSolicitud" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblReferencia_tblSolicitud" Association="dbCyCModel.FK_tblReferencia_tblSolicitud">
+            <End Role="tblSolicitud" EntitySet="tblSolicitud" />
+            <End Role="tblReferencia" EntitySet="tblReferencia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblRelSolicitudVendedor_tblSolicitud" Association="dbCyCModel.FK_tblRelSolicitudVendedor_tblSolicitud">
+            <End Role="tblSolicitud" EntitySet="tblSolicitud" />
+            <End Role="tblRelSolicitudVendedor" EntitySet="tblRelSolicitudVendedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblRelSolicitudVendedor_tblVendedor" Association="dbCyCModel.FK_tblRelSolicitudVendedor_tblVendedor">
+            <End Role="tblVendedor" EntitySet="tblVendedor" />
+            <End Role="tblRelSolicitudVendedor" EntitySet="tblRelSolicitudVendedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblRelSolicitudVerificador_tblSolicitud" Association="dbCyCModel.FK_tblRelSolicitudVerificador_tblSolicitud">
+            <End Role="tblSolicitud" EntitySet="tblSolicitud" />
+            <End Role="tblRelSolicitudVerificador" EntitySet="tblRelSolicitudVerificador" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblRelSolicitudVerificador_tblVerificador" Association="dbCyCModel.FK_tblRelSolicitudVerificador_tblVerificador">
+            <End Role="tblVerificador" EntitySet="tblVerificador" />
+            <End Role="tblRelSolicitudVerificador" EntitySet="tblRelSolicitudVerificador" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblVendedor_tblUsuario" Association="dbCyCModel.FK_tblVendedor_tblUsuario">
+            <End Role="tblUsuario" EntitySet="tblUsuario" />
+            <End Role="tblVendedor" EntitySet="tblVendedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblVerificador_tblUsuario" Association="dbCyCModel.FK_tblVerificador_tblUsuario">
+            <End Role="tblUsuario" EntitySet="tblUsuario" />
+            <End Role="tblVerificador" EntitySet="tblVerificador" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tblAval">
+          <Key>
+            <PropertyRef Name="idAval" />
+          </Key>
+          <Property Name="idAval" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="apellidoPaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="apellidoMaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="rfc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fechaNacimiento" Type="DateTime" Precision="0" />
+          <Property Name="fechaCreacion" Type="DateTime" Precision="3" />
+          <Property Name="sexo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="lada" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="celular" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idSolicitud" Type="Int32" />
+          <Property Name="idEmpleo" Type="Int32" />
+          <Property Name="idDireccion" Type="Int32" />
+          <NavigationProperty Name="tblDireccion" Relationship="dbCyCModel.FK_tblAval_tblDireccion" FromRole="tblAval" ToRole="tblDireccion" />
+          <NavigationProperty Name="tblEmpleo" Relationship="dbCyCModel.FK_tblAval_tblEmpleo" FromRole="tblAval" ToRole="tblEmpleo" />
+          <NavigationProperty Name="tblSolicitud" Relationship="dbCyCModel.FK_tblAval_tblSolicitud" FromRole="tblAval" ToRole="tblSolicitud" />
+          <NavigationProperty Name="tblRelDocumentoAval" Relationship="dbCyCModel.FK_tblRelDocumentoAval_tblAval" FromRole="tblAval" ToRole="tblRelDocumentoAval" />
+        </EntityType>
+        <EntityType Name="tblCliente">
+          <Key>
+            <PropertyRef Name="idCliente" />
+          </Key>
+          <Property Name="idCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="apellidoPaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="apellidoMaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="rfc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fechaNacimiento" Type="DateTime" Precision="0" />
+          <Property Name="sexo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="fechaCreacion" Type="DateTime" Precision="3" />
+          <Property Name="idSolicitud" Type="Int32" />
+          <Property Name="idEmpleo" Type="Int32" />
+          <Property Name="idEstadoCivil" Type="Int32" />
+          <Property Name="idDireccion" Type="Int32" />
+          <Property Name="celular" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="lada" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblDireccion" Relationship="dbCyCModel.FK_tblCliente_tblDireccion" FromRole="tblCliente" ToRole="tblDireccion" />
+          <NavigationProperty Name="tblEmpleo" Relationship="dbCyCModel.FK_tblCliente_tblEmpleo" FromRole="tblCliente" ToRole="tblEmpleo" />
+          <NavigationProperty Name="tblSolicitud" Relationship="dbCyCModel.FK_tblCliente_tblSolicitud" FromRole="tblCliente" ToRole="tblSolicitud" />
+          <NavigationProperty Name="tblRelDocumentoCliente" Relationship="dbCyCModel.FK_tblRelDocumentoCliente_tblCliente" FromRole="tblCliente" ToRole="tblRelDocumentoCliente" />
+        </EntityType>
+        <EntityType Name="tblConyugue">
+          <Key>
+            <PropertyRef Name="idConyugue" />
+          </Key>
+          <Property Name="idConyugue" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="apellidoPaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="apellidoMaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="celular" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="lada" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idSolicitud" Type="Int32" />
+          <Property Name="idEmpleo" Type="Int32" />
+          <NavigationProperty Name="tblEmpleo" Relationship="dbCyCModel.FK_tblConyugue_tblEmpleo" FromRole="tblConyugue" ToRole="tblEmpleo" />
+          <NavigationProperty Name="tblSolicitud" Relationship="dbCyCModel.FK_tblConyugue_tblSolicitud" FromRole="tblConyugue" ToRole="tblSolicitud" />
+        </EntityType>
+        <EntityType Name="tblDireccion">
+          <Key>
+            <PropertyRef Name="idDireccion" />
+          </Key>
+          <Property Name="idDireccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idEstado" Type="Int32" />
+          <Property Name="idMunicipio" Type="Int32" />
+          <Property Name="idColonia" Type="Int32" />
+          <Property Name="calle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="direccion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="codigoPostal" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="manzana" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="lote" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="numeroInterior" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="numeroExterior" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="cruzamientos" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="comentarios" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblAval" Relationship="dbCyCModel.FK_tblAval_tblDireccion" FromRole="tblDireccion" ToRole="tblAval" />
+          <NavigationProperty Name="tblCliente" Relationship="dbCyCModel.FK_tblCliente_tblDireccion" FromRole="tblDireccion" ToRole="tblCliente" />
+          <NavigationProperty Name="tblEmpleo" Relationship="dbCyCModel.FK_tblEmpleo_tblDireccion" FromRole="tblDireccion" ToRole="tblEmpleo" />
+          <NavigationProperty Name="tblReferencia" Relationship="dbCyCModel.FK_tblReferencia_tblDireccion" FromRole="tblDireccion" ToRole="tblReferencia" />
+        </EntityType>
+        <EntityType Name="tblDocumento">
+          <Key>
+            <PropertyRef Name="idDocumento" />
+          </Key>
+          <Property Name="idDocumento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idEstatusDocumeto" Type="Int32" />
+          <Property Name="idTipoDocumento" Type="Int32" />
+          <Property Name="idSolicitud" Type="Int32" />
+          <Property Name="fechaCreacion" Type="DateTime" Precision="3" />
+          <Property Name="imagenDocumento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblEstatusDocumento" Relationship="dbCyCModel.FK_tblDocumento_tblEstatusDocumento" FromRole="tblDocumento" ToRole="tblEstatusDocumento" />
+          <NavigationProperty Name="tblSolicitud" Relationship="dbCyCModel.FK_tblDocumento_tblSolicitud" FromRole="tblDocumento" ToRole="tblSolicitud" />
+          <NavigationProperty Name="tblTipoDocumento" Relationship="dbCyCModel.FK_tblDocumento_tblTipoDocumento" FromRole="tblDocumento" ToRole="tblTipoDocumento" />
+          <NavigationProperty Name="tblRelDocumentoAval" Relationship="dbCyCModel.FK_tblRelDocumentoAval_tblDocumento" FromRole="tblDocumento" ToRole="tblRelDocumentoAval" />
+          <NavigationProperty Name="tblRelDocumentoCliente" Relationship="dbCyCModel.FK_tblRelDocumentoCliente_tblDocumento" FromRole="tblDocumento" ToRole="tblRelDocumentoCliente" />
+        </EntityType>
+        <EntityType Name="tblEmpleo">
+          <Key>
+            <PropertyRef Name="idEmpleo" />
+          </Key>
+          <Property Name="idEmpleo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombreEmpresa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="departamento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="puesto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="giroEmpresa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ext" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="idDireccion" Type="Int32" />
+          <NavigationProperty Name="tblAval" Relationship="dbCyCModel.FK_tblAval_tblEmpleo" FromRole="tblEmpleo" ToRole="tblAval" />
+          <NavigationProperty Name="tblCliente" Relationship="dbCyCModel.FK_tblCliente_tblEmpleo" FromRole="tblEmpleo" ToRole="tblCliente" />
+          <NavigationProperty Name="tblConyugue" Relationship="dbCyCModel.FK_tblConyugue_tblEmpleo" FromRole="tblEmpleo" ToRole="tblConyugue" />
+          <NavigationProperty Name="tblDireccion" Relationship="dbCyCModel.FK_tblEmpleo_tblDireccion" FromRole="tblEmpleo" ToRole="tblDireccion" />
+        </EntityType>
+        <EntityType Name="tblEstatusDocumento">
+          <Key>
+            <PropertyRef Name="idEstatusDocumento" />
+          </Key>
+          <Property Name="idEstatusDocumento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="estatusDocumento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblDocumento" Relationship="dbCyCModel.FK_tblDocumento_tblEstatusDocumento" FromRole="tblEstatusDocumento" ToRole="tblDocumento" />
+        </EntityType>
+        <EntityType Name="tblEstatusSolicitud">
+          <Key>
+            <PropertyRef Name="idEstatusSolicitud" />
+          </Key>
+          <Property Name="idEstatusSolicitud" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="estatusSolicitud" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblSolicitud" Relationship="dbCyCModel.FK_tblSolicitud_tblEstatusSolicitud" FromRole="tblEstatusSolicitud" ToRole="tblSolicitud" />
+        </EntityType>
+        <EntityType Name="tblReferencia">
+          <Key>
+            <PropertyRef Name="idReferencia" />
+          </Key>
+          <Property Name="idReferencia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="apellidoPaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="apellidoMaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="lada" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="celular" Type="Binary" MaxLength="20" FixedLength="false" />
+          <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fechaCreacion" Type="DateTime" Precision="3" />
+          <Property Name="idSolicitud" Type="Int32" />
+          <Property Name="idDireccion" Type="Int32" />
+          <NavigationProperty Name="tblDireccion" Relationship="dbCyCModel.FK_tblReferencia_tblDireccion" FromRole="tblReferencia" ToRole="tblDireccion" />
+          <NavigationProperty Name="tblSolicitud" Relationship="dbCyCModel.FK_tblReferencia_tblSolicitud" FromRole="tblReferencia" ToRole="tblSolicitud" />
+        </EntityType>
+        <EntityType Name="tblRelDocumentoAval">
+          <Key>
+            <PropertyRef Name="idRelDocumentoAval" />
+          </Key>
+          <Property Name="idRelDocumentoAval" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idDocumento" Type="Int32" />
+          <Property Name="idAval" Type="Int32" />
+          <NavigationProperty Name="tblAval" Relationship="dbCyCModel.FK_tblRelDocumentoAval_tblAval" FromRole="tblRelDocumentoAval" ToRole="tblAval" />
+          <NavigationProperty Name="tblDocumento" Relationship="dbCyCModel.FK_tblRelDocumentoAval_tblDocumento" FromRole="tblRelDocumentoAval" ToRole="tblDocumento" />
+        </EntityType>
+        <EntityType Name="tblRelDocumentoCliente">
+          <Key>
+            <PropertyRef Name="idRelDocumentoCliente" />
+          </Key>
+          <Property Name="idRelDocumentoCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idDocumento" Type="Int32" />
+          <Property Name="idCliente" Type="Int32" />
+          <NavigationProperty Name="tblCliente" Relationship="dbCyCModel.FK_tblRelDocumentoCliente_tblCliente" FromRole="tblRelDocumentoCliente" ToRole="tblCliente" />
+          <NavigationProperty Name="tblDocumento" Relationship="dbCyCModel.FK_tblRelDocumentoCliente_tblDocumento" FromRole="tblRelDocumentoCliente" ToRole="tblDocumento" />
+        </EntityType>
+        <EntityType Name="tblRelSolicitudVendedor">
+          <Key>
+            <PropertyRef Name="idRelSolicitudVendedor" />
+          </Key>
+          <Property Name="idRelSolicitudVendedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idSolicitud" Type="Int32" />
+          <Property Name="idVendedor" Type="Int32" />
+          <NavigationProperty Name="tblSolicitud" Relationship="dbCyCModel.FK_tblRelSolicitudVendedor_tblSolicitud" FromRole="tblRelSolicitudVendedor" ToRole="tblSolicitud" />
+          <NavigationProperty Name="tblVendedor" Relationship="dbCyCModel.FK_tblRelSolicitudVendedor_tblVendedor" FromRole="tblRelSolicitudVendedor" ToRole="tblVendedor" />
+        </EntityType>
+        <EntityType Name="tblRelSolicitudVerificador">
+          <Key>
+            <PropertyRef Name="idRelSolicitudVerificador" />
+          </Key>
+          <Property Name="idRelSolicitudVerificador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idSolicitud" Type="Int32" />
+          <Property Name="idVerificador" Type="Int32" />
+          <NavigationProperty Name="tblSolicitud" Relationship="dbCyCModel.FK_tblRelSolicitudVerificador_tblSolicitud" FromRole="tblRelSolicitudVerificador" ToRole="tblSolicitud" />
+          <NavigationProperty Name="tblVerificador" Relationship="dbCyCModel.FK_tblRelSolicitudVerificador_tblVerificador" FromRole="tblRelSolicitudVerificador" ToRole="tblVerificador" />
+        </EntityType>
+        <EntityType Name="tblSolicitud">
+          <Key>
+            <PropertyRef Name="idSolicitud" />
+          </Key>
+          <Property Name="idSolicitud" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="folio" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="score" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="comentarioVendedor" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="comentarioVerificador" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="idEstatusSolicitud" Type="Int32" />
+          <Property Name="fechaCreacion" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tblAval" Relationship="dbCyCModel.FK_tblAval_tblSolicitud" FromRole="tblSolicitud" ToRole="tblAval" />
+          <NavigationProperty Name="tblCliente" Relationship="dbCyCModel.FK_tblCliente_tblSolicitud" FromRole="tblSolicitud" ToRole="tblCliente" />
+          <NavigationProperty Name="tblConyugue" Relationship="dbCyCModel.FK_tblConyugue_tblSolicitud" FromRole="tblSolicitud" ToRole="tblConyugue" />
+          <NavigationProperty Name="tblDocumento" Relationship="dbCyCModel.FK_tblDocumento_tblSolicitud" FromRole="tblSolicitud" ToRole="tblDocumento" />
+          <NavigationProperty Name="tblEstatusSolicitud" Relationship="dbCyCModel.FK_tblSolicitud_tblEstatusSolicitud" FromRole="tblSolicitud" ToRole="tblEstatusSolicitud" />
+          <NavigationProperty Name="tblReferencia" Relationship="dbCyCModel.FK_tblReferencia_tblSolicitud" FromRole="tblSolicitud" ToRole="tblReferencia" />
+          <NavigationProperty Name="tblRelSolicitudVendedor" Relationship="dbCyCModel.FK_tblRelSolicitudVendedor_tblSolicitud" FromRole="tblSolicitud" ToRole="tblRelSolicitudVendedor" />
+          <NavigationProperty Name="tblRelSolicitudVerificador" Relationship="dbCyCModel.FK_tblRelSolicitudVerificador_tblSolicitud" FromRole="tblSolicitud" ToRole="tblRelSolicitudVerificador" />
+        </EntityType>
+        <EntityType Name="tblTipoDocumento">
+          <Key>
+            <PropertyRef Name="idTipoDocumento" />
+          </Key>
+          <Property Name="idTipoDocumento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="documento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="activo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="tblDocumento" Relationship="dbCyCModel.FK_tblDocumento_tblTipoDocumento" FromRole="tblTipoDocumento" ToRole="tblDocumento" />
+        </EntityType>
+        <EntityType Name="tblVendedor">
+          <Key>
+            <PropertyRef Name="idVendedor" />
+          </Key>
+          <Property Name="idVendedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idUsuario" Type="Int32" />
+          <NavigationProperty Name="tblRelSolicitudVendedor" Relationship="dbCyCModel.FK_tblRelSolicitudVendedor_tblVendedor" FromRole="tblVendedor" ToRole="tblRelSolicitudVendedor" />
+          <NavigationProperty Name="tblUsuario" Relationship="dbCyCModel.FK_tblVendedor_tblUsuario" FromRole="tblVendedor" ToRole="tblUsuario" />
+        </EntityType>
+        <EntityType Name="tblVerificador">
+          <Key>
+            <PropertyRef Name="idVerificador" />
+          </Key>
+          <Property Name="idVerificador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idUsuario" Type="Int32" />
+          <NavigationProperty Name="tblRelSolicitudVerificador" Relationship="dbCyCModel.FK_tblRelSolicitudVerificador_tblVerificador" FromRole="tblVerificador" ToRole="tblRelSolicitudVerificador" />
+          <NavigationProperty Name="tblUsuario" Relationship="dbCyCModel.FK_tblVerificador_tblUsuario" FromRole="tblVerificador" ToRole="tblUsuario" />
+        </EntityType>
+        <Association Name="FK_tblAval_tblDireccion">
+          <End Type="dbCyCModel.tblDireccion" Role="tblDireccion" Multiplicity="0..1" />
+          <End Type="dbCyCModel.tblAval" Role="tblAval" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDireccion">
+              <PropertyRef Name="idDireccion" />
+            </Principal>
+            <Dependent Role="tblAval">
+              <PropertyRef Name="idDireccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblAval_tblEmpleo">
+          <End Type="dbCyCModel.tblEmpleo" Role="tblEmpleo" Multiplicity="0..1" />
+          <End Type="dbCyCModel.tblAval" Role="tblAval" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblEmpleo">
+              <PropertyRef Name="idEmpleo" />
+            </Principal>
+            <Dependent Role="tblAval">
+              <PropertyRef Name="idEmpleo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblAval_tblSolicitud">
+          <End Type="dbCyCModel.tblSolicitud" Role="tblSolicitud" Multiplicity="0..1" />
+          <End Type="dbCyCModel.tblAval" Role="tblAval" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblSolicitud">
+              <PropertyRef Name="idSolicitud" />
+            </Principal>
+            <Dependent Role="tblAval">
+              <PropertyRef Name="idSolicitud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblRelDocumentoAval_tblAval">
+          <End Type="dbCyCModel.tblAval" Role="tblAval" Multiplicity="0..1" />
+          <End Type="dbCyCModel.tblRelDocumentoAval" Role="tblRelDocumentoAval" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAval">
+              <PropertyRef Name="idAval" />
+            </Principal>
+            <Dependent Role="tblRelDocumentoAval">
+              <PropertyRef Name="idAval" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblCliente_tblDireccion">
+          <End Type="dbCyCModel.tblDireccion" Role="tblDireccion" Multiplicity="0..1" />
+          <End Type="dbCyCModel.tblCliente" Role="tblCliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDireccion">
+              <PropertyRef Name="idDireccion" />
+            </Principal>
+            <Dependent Role="tblCliente">
+              <PropertyRef Name="idDireccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblCliente_tblEmpleo">
+          <End Type="dbCyCModel.tblEmpleo" Role="tblEmpleo" Multiplicity="0..1" />
+          <End Type="dbCyCModel.tblCliente" Role="tblCliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblEmpleo">
+              <PropertyRef Name="idEmpleo" />
+            </Principal>
+            <Dependent Role="tblCliente">
+              <PropertyRef Name="idEmpleo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblCliente_tblSolicitud">
+          <End Type="dbCyCModel.tblSolicitud" Role="tblSolicitud" Multiplicity="0..1" />
+          <End Type="dbCyCModel.tblCliente" Role="tblCliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblSolicitud">
+              <PropertyRef Name="idSolicitud" />
+            </Principal>
+            <Dependent Role="tblCliente">
+              <PropertyRef Name="idSolicitud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblRelDocumentoCliente_tblCliente">
+          <End Type="dbCyCModel.tblCliente" Role="tblCliente" Multiplicity="0..1" />
+          <End Type="dbCyCModel.tblRelDocumentoCliente" Role="tblRelDocumentoCliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCliente">
+              <PropertyRef Name="idCliente" />
+            </Principal>
+            <Dependent Role="tblRelDocumentoCliente">
+              <PropertyRef Name="idCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblConyugue_tblEmpleo">
+          <End Type="dbCyCModel.tblEmpleo" Role="tblEmpleo" Multiplicity="0..1" />
+          <End Type="dbCyCModel.tblConyugue" Role="tblConyugue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblEmpleo">
+              <PropertyRef Name="idEmpleo" />
+            </Principal>
+            <Dependent Role="tblConyugue">
+              <PropertyRef Name="idEmpleo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblConyugue_tblSolicitud">
+          <End Type="dbCyCModel.tblSolicitud" Role="tblSolicitud" Multiplicity="0..1" />
+          <End Type="dbCyCModel.tblConyugue" Role="tblConyugue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblSolicitud">
+              <PropertyRef Name="idSolicitud" />
+            </Principal>
+            <Dependent Role="tblConyugue">
+              <PropertyRef Name="idSolicitud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblEmpleo_tblDireccion">
+          <End Type="dbCyCModel.tblDireccion" Role="tblDireccion" Multiplicity="0..1" />
+          <End Type="dbCyCModel.tblEmpleo" Role="tblEmpleo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDireccion">
+              <PropertyRef Name="idDireccion" />
+            </Principal>
+            <Dependent Role="tblEmpleo">
+              <PropertyRef Name="idDireccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblReferencia_tblDireccion">
+          <End Type="dbCyCModel.tblDireccion" Role="tblDireccion" Multiplicity="0..1" />
+          <End Type="dbCyCModel.tblReferencia" Role="tblReferencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDireccion">
+              <PropertyRef Name="idDireccion" />
+            </Principal>
+            <Dependent Role="tblReferencia">
+              <PropertyRef Name="idDireccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblDocumento_tblEstatusDocumento">
+          <End Type="dbCyCModel.tblEstatusDocumento" Role="tblEstatusDocumento" Multiplicity="0..1" />
+          <End Type="dbCyCModel.tblDocumento" Role="tblDocumento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblEstatusDocumento">
+              <PropertyRef Name="idEstatusDocumento" />
+            </Principal>
+            <Dependent Role="tblDocumento">
+              <PropertyRef Name="idEstatusDocumeto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblDocumento_tblSolicitud">
+          <End Type="dbCyCModel.tblSolicitud" Role="tblSolicitud" Multiplicity="0..1" />
+          <End Type="dbCyCModel.tblDocumento" Role="tblDocumento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblSolicitud">
+              <PropertyRef Name="idSolicitud" />
+            </Principal>
+            <Dependent Role="tblDocumento">
+              <PropertyRef Name="idSolicitud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblDocumento_tblTipoDocumento">
+          <End Type="dbCyCModel.tblTipoDocumento" Role="tblTipoDocumento" Multiplicity="0..1" />
+          <End Type="dbCyCModel.tblDocumento" Role="tblDocumento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblTipoDocumento">
+              <PropertyRef Name="idTipoDocumento" />
+            </Principal>
+            <Dependent Role="tblDocumento">
+              <PropertyRef Name="idTipoDocumento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblRelDocumentoAval_tblDocumento">
+          <End Type="dbCyCModel.tblDocumento" Role="tblDocumento" Multiplicity="0..1" />
+          <End Type="dbCyCModel.tblRelDocumentoAval" Role="tblRelDocumentoAval" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDocumento">
+              <PropertyRef Name="idDocumento" />
+            </Principal>
+            <Dependent Role="tblRelDocumentoAval">
+              <PropertyRef Name="idDocumento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblRelDocumentoCliente_tblDocumento">
+          <End Type="dbCyCModel.tblDocumento" Role="tblDocumento" Multiplicity="0..1" />
+          <End Type="dbCyCModel.tblRelDocumentoCliente" Role="tblRelDocumentoCliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDocumento">
+              <PropertyRef Name="idDocumento" />
+            </Principal>
+            <Dependent Role="tblRelDocumentoCliente">
+              <PropertyRef Name="idDocumento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblSolicitud_tblEstatusSolicitud">
+          <End Type="dbCyCModel.tblEstatusSolicitud" Role="tblEstatusSolicitud" Multiplicity="0..1" />
+          <End Type="dbCyCModel.tblSolicitud" Role="tblSolicitud" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblEstatusSolicitud">
+              <PropertyRef Name="idEstatusSolicitud" />
+            </Principal>
+            <Dependent Role="tblSolicitud">
+              <PropertyRef Name="idEstatusSolicitud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblReferencia_tblSolicitud">
+          <End Type="dbCyCModel.tblSolicitud" Role="tblSolicitud" Multiplicity="0..1" />
+          <End Type="dbCyCModel.tblReferencia" Role="tblReferencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblSolicitud">
+              <PropertyRef Name="idSolicitud" />
+            </Principal>
+            <Dependent Role="tblReferencia">
+              <PropertyRef Name="idSolicitud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblRelSolicitudVendedor_tblSolicitud">
+          <End Type="dbCyCModel.tblSolicitud" Role="tblSolicitud" Multiplicity="0..1" />
+          <End Type="dbCyCModel.tblRelSolicitudVendedor" Role="tblRelSolicitudVendedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblSolicitud">
+              <PropertyRef Name="idSolicitud" />
+            </Principal>
+            <Dependent Role="tblRelSolicitudVendedor">
+              <PropertyRef Name="idSolicitud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblRelSolicitudVendedor_tblVendedor">
+          <End Type="dbCyCModel.tblVendedor" Role="tblVendedor" Multiplicity="0..1" />
+          <End Type="dbCyCModel.tblRelSolicitudVendedor" Role="tblRelSolicitudVendedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblVendedor">
+              <PropertyRef Name="idVendedor" />
+            </Principal>
+            <Dependent Role="tblRelSolicitudVendedor">
+              <PropertyRef Name="idVendedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblRelSolicitudVerificador_tblSolicitud">
+          <End Type="dbCyCModel.tblSolicitud" Role="tblSolicitud" Multiplicity="0..1" />
+          <End Type="dbCyCModel.tblRelSolicitudVerificador" Role="tblRelSolicitudVerificador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblSolicitud">
+              <PropertyRef Name="idSolicitud" />
+            </Principal>
+            <Dependent Role="tblRelSolicitudVerificador">
+              <PropertyRef Name="idSolicitud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblRelSolicitudVerificador_tblVerificador">
+          <End Type="dbCyCModel.tblVerificador" Role="tblVerificador" Multiplicity="0..1" />
+          <End Type="dbCyCModel.tblRelSolicitudVerificador" Role="tblRelSolicitudVerificador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblVerificador">
+              <PropertyRef Name="idVerificador" />
+            </Principal>
+            <Dependent Role="tblRelSolicitudVerificador">
+              <PropertyRef Name="idVerificador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblVendedor_tblUsuario">
+          <End Type="dbCyCModel.tblUsuario" Role="tblUsuario" Multiplicity="0..1" />
+          <End Type="dbCyCModel.tblVendedor" Role="tblVendedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUsuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="tblVendedor">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblVerificador_tblUsuario">
+          <End Type="dbCyCModel.tblUsuario" Role="tblUsuario" Multiplicity="0..1" />
+          <End Type="dbCyCModel.tblVerificador" Role="tblVerificador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUsuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="tblVerificador">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbCyCModelStoreContainer" CdmEntityContainer="dbCyCEntities">
+          <EntitySetMapping Name="tblPermiso">
+            <EntityTypeMapping TypeName="dbCyCModel.tblPermiso">
+              <MappingFragment StoreEntitySet="tblPermiso">
+                <ScalarProperty Name="idPermiso" ColumnName="idPermiso" />
+                <ScalarProperty Name="permiso" ColumnName="permiso" />
+                <ScalarProperty Name="pagina" ColumnName="pagina" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblPermisoDenegadoPorRol">
+            <EntityTypeMapping TypeName="dbCyCModel.tblPermisoDenegadoPorRol">
+              <MappingFragment StoreEntitySet="tblPermisoDenegadoPorRol">
+                <ScalarProperty Name="idPermisoDenegado" ColumnName="idPermisoDenegado" />
+                <ScalarProperty Name="idRol" ColumnName="idRol" />
+                <ScalarProperty Name="idPermiso" ColumnName="idPermiso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblRol">
+            <EntityTypeMapping TypeName="dbCyCModel.tblRol">
+              <MappingFragment StoreEntitySet="tblRol">
+                <ScalarProperty Name="idRol" ColumnName="idRol" />
+                <ScalarProperty Name="rol" ColumnName="rol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblUsuario">
+            <EntityTypeMapping TypeName="dbCyCModel.tblUsuario">
+              <MappingFragment StoreEntitySet="tblUsuario">
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+                <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="apellidoPaterno" ColumnName="apellidoPaterno" />
+                <ScalarProperty Name="apellidoMaterno" ColumnName="apellidoMaterno" />
+                <ScalarProperty Name="idRol" ColumnName="idRol" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblAval">
+            <EntityTypeMapping TypeName="dbCyCModel.tblAval">
+              <MappingFragment StoreEntitySet="tblAval">
+                <ScalarProperty Name="idDireccion" ColumnName="idDireccion" />
+                <ScalarProperty Name="idEmpleo" ColumnName="idEmpleo" />
+                <ScalarProperty Name="idSolicitud" ColumnName="idSolicitud" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="celular" ColumnName="celular" />
+                <ScalarProperty Name="lada" ColumnName="lada" />
+                <ScalarProperty Name="sexo" ColumnName="sexo" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+                <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
+                <ScalarProperty Name="rfc" ColumnName="rfc" />
+                <ScalarProperty Name="apellidoMaterno" ColumnName="apellidoMaterno" />
+                <ScalarProperty Name="apellidoPaterno" ColumnName="apellidoPaterno" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="idAval" ColumnName="idAval" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCliente">
+            <EntityTypeMapping TypeName="dbCyCModel.tblCliente">
+              <MappingFragment StoreEntitySet="tblCliente">
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="lada" ColumnName="lada" />
+                <ScalarProperty Name="celular" ColumnName="celular" />
+                <ScalarProperty Name="idDireccion" ColumnName="idDireccion" />
+                <ScalarProperty Name="idEstadoCivil" ColumnName="idEstadoCivil" />
+                <ScalarProperty Name="idEmpleo" ColumnName="idEmpleo" />
+                <ScalarProperty Name="idSolicitud" ColumnName="idSolicitud" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+                <ScalarProperty Name="sexo" ColumnName="sexo" />
+                <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
+                <ScalarProperty Name="rfc" ColumnName="rfc" />
+                <ScalarProperty Name="apellidoMaterno" ColumnName="apellidoMaterno" />
+                <ScalarProperty Name="apellidoPaterno" ColumnName="apellidoPaterno" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblConyugue">
+            <EntityTypeMapping TypeName="dbCyCModel.tblConyugue">
+              <MappingFragment StoreEntitySet="tblConyugue">
+                <ScalarProperty Name="idEmpleo" ColumnName="idEmpleo" />
+                <ScalarProperty Name="idSolicitud" ColumnName="idSolicitud" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="lada" ColumnName="lada" />
+                <ScalarProperty Name="celular" ColumnName="celular" />
+                <ScalarProperty Name="apellidoMaterno" ColumnName="apellidoMaterno" />
+                <ScalarProperty Name="apellidoPaterno" ColumnName="apellidoPaterno" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="idConyugue" ColumnName="idConyugue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDireccion">
+            <EntityTypeMapping TypeName="dbCyCModel.tblDireccion">
+              <MappingFragment StoreEntitySet="tblDireccion">
+                <ScalarProperty Name="comentarios" ColumnName="comentarios" />
+                <ScalarProperty Name="cruzamientos" ColumnName="cruzamientos" />
+                <ScalarProperty Name="numeroExterior" ColumnName="numeroExterior" />
+                <ScalarProperty Name="numeroInterior" ColumnName="numeroInterior" />
+                <ScalarProperty Name="lote" ColumnName="lote" />
+                <ScalarProperty Name="manzana" ColumnName="manzana" />
+                <ScalarProperty Name="codigoPostal" ColumnName="codigoPostal" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="calle" ColumnName="calle" />
+                <ScalarProperty Name="idColonia" ColumnName="idColonia" />
+                <ScalarProperty Name="idMunicipio" ColumnName="idMunicipio" />
+                <ScalarProperty Name="idEstado" ColumnName="idEstado" />
+                <ScalarProperty Name="idDireccion" ColumnName="idDireccion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDocumento">
+            <EntityTypeMapping TypeName="dbCyCModel.tblDocumento">
+              <MappingFragment StoreEntitySet="tblDocumento">
+                <ScalarProperty Name="imagenDocumento" ColumnName="imagenDocumento" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+                <ScalarProperty Name="idSolicitud" ColumnName="idSolicitud" />
+                <ScalarProperty Name="idTipoDocumento" ColumnName="idTipoDocumento" />
+                <ScalarProperty Name="idEstatusDocumeto" ColumnName="idEstatusDocumeto" />
+                <ScalarProperty Name="idDocumento" ColumnName="idDocumento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblEmpleo">
+            <EntityTypeMapping TypeName="dbCyCModel.tblEmpleo">
+              <MappingFragment StoreEntitySet="tblEmpleo">
+                <ScalarProperty Name="idDireccion" ColumnName="idDireccion" />
+                <ScalarProperty Name="ext" ColumnName="ext" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="giroEmpresa" ColumnName="giroEmpresa" />
+                <ScalarProperty Name="puesto" ColumnName="puesto" />
+                <ScalarProperty Name="departamento" ColumnName="departamento" />
+                <ScalarProperty Name="nombreEmpresa" ColumnName="nombreEmpresa" />
+                <ScalarProperty Name="idEmpleo" ColumnName="idEmpleo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblEstatusDocumento">
+            <EntityTypeMapping TypeName="dbCyCModel.tblEstatusDocumento">
+              <MappingFragment StoreEntitySet="tblEstatusDocumento">
+                <ScalarProperty Name="estatusDocumento" ColumnName="estatusDocumento" />
+                <ScalarProperty Name="idEstatusDocumento" ColumnName="idEstatusDocumento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblEstatusSolicitud">
+            <EntityTypeMapping TypeName="dbCyCModel.tblEstatusSolicitud">
+              <MappingFragment StoreEntitySet="tblEstatusSolicitud">
+                <ScalarProperty Name="estatusSolicitud" ColumnName="estatusSolicitud" />
+                <ScalarProperty Name="idEstatusSolicitud" ColumnName="idEstatusSolicitud" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblReferencia">
+            <EntityTypeMapping TypeName="dbCyCModel.tblReferencia">
+              <MappingFragment StoreEntitySet="tblReferencia">
+                <ScalarProperty Name="idDireccion" ColumnName="idDireccion" />
+                <ScalarProperty Name="idSolicitud" ColumnName="idSolicitud" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="celular" ColumnName="celular" />
+                <ScalarProperty Name="lada" ColumnName="lada" />
+                <ScalarProperty Name="apellidoMaterno" ColumnName="apellidoMaterno" />
+                <ScalarProperty Name="apellidoPaterno" ColumnName="apellidoPaterno" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="idReferencia" ColumnName="idReferencia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblRelDocumentoAval">
+            <EntityTypeMapping TypeName="dbCyCModel.tblRelDocumentoAval">
+              <MappingFragment StoreEntitySet="tblRelDocumentoAval">
+                <ScalarProperty Name="idAval" ColumnName="idAval" />
+                <ScalarProperty Name="idDocumento" ColumnName="idDocumento" />
+                <ScalarProperty Name="idRelDocumentoAval" ColumnName="idRelDocumentoAval" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblRelDocumentoCliente">
+            <EntityTypeMapping TypeName="dbCyCModel.tblRelDocumentoCliente">
+              <MappingFragment StoreEntitySet="tblRelDocumentoCliente">
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="idDocumento" ColumnName="idDocumento" />
+                <ScalarProperty Name="idRelDocumentoCliente" ColumnName="idRelDocumentoCliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblRelSolicitudVendedor">
+            <EntityTypeMapping TypeName="dbCyCModel.tblRelSolicitudVendedor">
+              <MappingFragment StoreEntitySet="tblRelSolicitudVendedor">
+                <ScalarProperty Name="idVendedor" ColumnName="idVendedor" />
+                <ScalarProperty Name="idSolicitud" ColumnName="idSolicitud" />
+                <ScalarProperty Name="idRelSolicitudVendedor" ColumnName="idRelSolicitudVendedor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblRelSolicitudVerificador">
+            <EntityTypeMapping TypeName="dbCyCModel.tblRelSolicitudVerificador">
+              <MappingFragment StoreEntitySet="tblRelSolicitudVerificador">
+                <ScalarProperty Name="idVerificador" ColumnName="idVerificador" />
+                <ScalarProperty Name="idSolicitud" ColumnName="idSolicitud" />
+                <ScalarProperty Name="idRelSolicitudVerificador" ColumnName="idRelSolicitudVerificador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblSolicitud">
+            <EntityTypeMapping TypeName="dbCyCModel.tblSolicitud">
+              <MappingFragment StoreEntitySet="tblSolicitud">
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+                <ScalarProperty Name="idEstatusSolicitud" ColumnName="idEstatusSolicitud" />
+                <ScalarProperty Name="comentarioVerificador" ColumnName="comentarioVerificador" />
+                <ScalarProperty Name="comentarioVendedor" ColumnName="comentarioVendedor" />
+                <ScalarProperty Name="score" ColumnName="score" />
+                <ScalarProperty Name="folio" ColumnName="folio" />
+                <ScalarProperty Name="idSolicitud" ColumnName="idSolicitud" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblTipoDocumento">
+            <EntityTypeMapping TypeName="dbCyCModel.tblTipoDocumento">
+              <MappingFragment StoreEntitySet="tblTipoDocumento">
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="documento" ColumnName="documento" />
+                <ScalarProperty Name="idTipoDocumento" ColumnName="idTipoDocumento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblVendedor">
+            <EntityTypeMapping TypeName="dbCyCModel.tblVendedor">
+              <MappingFragment StoreEntitySet="tblVendedor">
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="idVendedor" ColumnName="idVendedor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblVerificador">
+            <EntityTypeMapping TypeName="dbCyCModel.tblVerificador">
+              <MappingFragment StoreEntitySet="tblVerificador">
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="idVerificador" ColumnName="idVerificador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

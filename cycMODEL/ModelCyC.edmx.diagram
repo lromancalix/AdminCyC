@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="518edbb0a1e342b99a973b64b1289737" Name="Diagram1" ZoomLevel="152">
+        <EntityTypeShape EntityType="dbCyCModel.tblPermiso" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbCyCModel.tblPermisoDenegadoPorRol" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbCyCModel.tblRol" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbCyCModel.tblUsuario" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <AssociationConnector Association="dbCyCModel.FK_tblPermisoDenegadoPorRol_tblPermiso" ManuallyRouted="false" />
+        <AssociationConnector Association="dbCyCModel.FK_tblPermisoDenegadoPorRol_tblRol" ManuallyRouted="false" />
+        <AssociationConnector Association="dbCyCModel.FK_tblUsuario_tblRol" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="dbCyCModel.tblAval" Width="1.5" PointX="12.875" PointY="17.5" />
+        <EntityTypeShape EntityType="dbCyCModel.tblCliente" Width="1.5" PointX="9.875" PointY="18.5" />
+        <EntityTypeShape EntityType="dbCyCModel.tblConyugue" Width="1.5" PointX="9.875" PointY="10.25" />
+        <EntityTypeShape EntityType="dbCyCModel.tblDireccion" Width="1.5" PointX="5.375" PointY="8.625" />
+        <EntityTypeShape EntityType="dbCyCModel.tblDocumento" Width="1.5" PointX="9.875" PointY="14.25" />
+        <EntityTypeShape EntityType="dbCyCModel.tblEmpleo" Width="1.5" PointX="7.625" PointY="9.125" />
+        <EntityTypeShape EntityType="dbCyCModel.tblEstatusDocumento" Width="1.5" PointX="7.625" PointY="21.25" />
+        <EntityTypeShape EntityType="dbCyCModel.tblEstatusSolicitud" Width="1.5" PointX="5.375" PointY="15" />
+        <EntityTypeShape EntityType="dbCyCModel.tblReferencia" Width="1.5" PointX="15.875" PointY="14.125" />
+        <EntityTypeShape EntityType="dbCyCModel.tblRelDocumentoAval" Width="1.5" PointX="15.125" PointY="19.125" />
+        <EntityTypeShape EntityType="dbCyCModel.tblRelDocumentoCliente" Width="1.5" PointX="15.125" PointY="22.625" />
+        <EntityTypeShape EntityType="dbCyCModel.tblRelSolicitudVendedor" Width="1.5" PointX="12.875" PointY="14.75" />
+        <EntityTypeShape EntityType="dbCyCModel.tblRelSolicitudVerificador" Width="1.5" PointX="12.875" PointY="11.75" />
+        <EntityTypeShape EntityType="dbCyCModel.tblSolicitud" Width="1.5" PointX="7.625" PointY="13.875" />
+        <EntityTypeShape EntityType="dbCyCModel.tblTipoDocumento" Width="1.5" PointX="7.625" PointY="18.75" />
+        <EntityTypeShape EntityType="dbCyCModel.tblVendedor" Width="1.5" PointX="10.625" PointY="23.875" />
+        <EntityTypeShape EntityType="dbCyCModel.tblVerificador" Width="1.5" PointX="10.625" PointY="6.875" />
+        <AssociationConnector Association="dbCyCModel.FK_tblAval_tblDireccion" />
+        <AssociationConnector Association="dbCyCModel.FK_tblAval_tblEmpleo" />
+        <AssociationConnector Association="dbCyCModel.FK_tblAval_tblSolicitud" />
+        <AssociationConnector Association="dbCyCModel.FK_tblRelDocumentoAval_tblAval" />
+        <AssociationConnector Association="dbCyCModel.FK_tblCliente_tblDireccion" />
+        <AssociationConnector Association="dbCyCModel.FK_tblCliente_tblEmpleo" />
+        <AssociationConnector Association="dbCyCModel.FK_tblCliente_tblSolicitud" />
+        <AssociationConnector Association="dbCyCModel.FK_tblRelDocumentoCliente_tblCliente" />
+        <AssociationConnector Association="dbCyCModel.FK_tblConyugue_tblEmpleo" />
+        <AssociationConnector Association="dbCyCModel.FK_tblConyugue_tblSolicitud" />
+        <AssociationConnector Association="dbCyCModel.FK_tblEmpleo_tblDireccion" />
+        <AssociationConnector Association="dbCyCModel.FK_tblReferencia_tblDireccion" />
+        <AssociationConnector Association="dbCyCModel.FK_tblDocumento_tblEstatusDocumento" />
+        <AssociationConnector Association="dbCyCModel.FK_tblDocumento_tblSolicitud" />
+        <AssociationConnector Association="dbCyCModel.FK_tblDocumento_tblTipoDocumento" />
+        <AssociationConnector Association="dbCyCModel.FK_tblRelDocumentoAval_tblDocumento" />
+        <AssociationConnector Association="dbCyCModel.FK_tblRelDocumentoCliente_tblDocumento" />
+        <AssociationConnector Association="dbCyCModel.FK_tblSolicitud_tblEstatusSolicitud" />
+        <AssociationConnector Association="dbCyCModel.FK_tblReferencia_tblSolicitud" />
+        <AssociationConnector Association="dbCyCModel.FK_tblRelSolicitudVendedor_tblSolicitud" />
+        <AssociationConnector Association="dbCyCModel.FK_tblRelSolicitudVendedor_tblVendedor" />
+        <AssociationConnector Association="dbCyCModel.FK_tblRelSolicitudVerificador_tblSolicitud" />
+        <AssociationConnector Association="dbCyCModel.FK_tblRelSolicitudVerificador_tblVerificador" />
+        <AssociationConnector Association="dbCyCModel.FK_tblVendedor_tblUsuario" />
+        <AssociationConnector Association="dbCyCModel.FK_tblVerificador_tblUsuario" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

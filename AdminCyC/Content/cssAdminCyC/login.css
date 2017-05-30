@@ -1,0 +1,12 @@
+﻿body {
+}
+
+.loginBodyCyC {
+    background-image: url('../img/photo4.jpg') !important;
+}
+
+
+.loginBoxCyC {
+    border-radius: 8px;
+    box-shadow: 2px 5px 5px grey;
+}
