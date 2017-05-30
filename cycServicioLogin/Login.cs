@@ -14,7 +14,7 @@ namespace cycServicioLogin
 
             if (!usuarioLogin.isError)
             {
-
+                ///
             }
             
             return usuarioAtenticado;
