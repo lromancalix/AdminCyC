@@ -1,6 +1,7 @@
 ﻿function _ValidaUsuario() {
     if (CyC.app.IsContentValid('loginForm'))
     {
+        //$("#loginForm").submit();
         var usuario = $('#txtUsuario').val();
         var contrasena = $('#txtContrasena').val();
         var userDataLogin = {

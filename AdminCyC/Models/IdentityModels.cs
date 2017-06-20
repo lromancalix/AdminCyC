@@ -29,5 +29,7 @@ namespace AdminCyC.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<DtoCyC.Usuario.dtoUsuario> dtoUsuarios { get; set; }
     }
 }
