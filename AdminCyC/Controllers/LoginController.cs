@@ -27,8 +27,8 @@ namespace AdminCyC.Controllers
             DTO.Login.dtoLoginUsuario userLogin =
                JsonConvert.DeserializeObject<DTO.Login.dtoLoginUsuario>(userDataLogin);
             //DTO.Login.dtoLoginUsuario userLogin = new DTO.Login.dtoLoginUsuario() { usuario = usuario, contrasena = contrasena };
-
-
+            var x = BLL.clsUsuario._TraerTodosLosUsuarios();
+            
             DTO.dtoRespuesta _Respuesta;
             if (ModelState.IsValid) 
             {
