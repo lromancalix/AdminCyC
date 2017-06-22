@@ -104,6 +104,16 @@ CyC.app = (function ($, window, document, undefined) {
         return (key == 13) ? true : false;
     }
 
+    var InitModal = function (idModal)
+    {
+        $("#" + idModal).modal("hide");
+    }
+
+    var ShowModal = function (idModal)
+    {
+        $("#" + idModal).modal("show");
+    }
+
     return {
         Mostrar: Mostrar,
         IsContentValid: IsContentValid,
@@ -111,7 +121,9 @@ CyC.app = (function ($, window, document, undefined) {
         OpenPartialView: OpenPartialView,
         CallJson: CallJson,
         GetJsonObject: GetJsonObject,
-        GetAppURLHost: GetAppURLHost
+        GetAppURLHost: GetAppURLHost,
+        InitModal: InitModal,
+        ShowModal: ShowModal
     }
 }(jQuery, window, document, navigator, undefined));
 

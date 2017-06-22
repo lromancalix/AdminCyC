@@ -509,6 +509,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\CyC\CyC.js" />
     <Content Include="Scripts\CyC\login.js" />
+    <Content Include="Scripts\CyC\usuarios.js" />
     <Content Include="Scripts\jquery-2.1.3.js" />
     <Content Include="Scripts\jquery-2.1.3.min.js" />
     <Content Include="Scripts\jquery-2.1.3.min.map" />
