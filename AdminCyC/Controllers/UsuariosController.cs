@@ -15,5 +15,9 @@ namespace AdminCyC.Controllers
         {
             return View();
         }
+
+        public ActionResult vpDetalleUsuario() {
+            return View();
+        }
     }
 }

@@ -34,3 +34,10 @@ textarea {
     .content-header > .breadcrumb {
         top: 1px !important;
     }
+
+/*.modal-body > input[type=text] {
+    max-width: none;
+}*/
+/*.form-control {
+    max-width: none !important;
+}*/
