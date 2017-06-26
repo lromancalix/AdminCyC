@@ -214,6 +214,7 @@
   <ItemGroup>
     <Content Include="assets\css\AdminLTE.min.css" />
     <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\bootstrap.css" />
     <Content Include="assets\css\font-awesome.min.css" />
     <Content Include="assets\css\Fontes.css" />
     <Content Include="assets\css\please-wait.css" />
@@ -509,6 +510,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\CyC\CyC.js" />
     <Content Include="Scripts\CyC\login.js" />
+    <Content Include="Scripts\CyC\usuarios.js" />
     <Content Include="Scripts\jquery-2.1.3.js" />
     <Content Include="Scripts\jquery-2.1.3.min.js" />
     <Content Include="Scripts\jquery-2.1.3.min.map" />
@@ -567,6 +569,7 @@
     <Content Include="Views\Shared\Erro.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Usuarios\Index.cshtml" />
+    <Content Include="Views\Usuarios\vpDetalleUsuario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

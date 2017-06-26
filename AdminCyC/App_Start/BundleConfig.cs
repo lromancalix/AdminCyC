@@ -39,6 +39,14 @@ namespace AdminCyC
             bundles.Add(new StyleBundle("~/Content/validate").Include(
                     "~/Content/validationEngine.jquery.css"
                 ));
+
+            /*
+             * Bundles para control de usuario
+             */
+
+            bundles.Add(new ScriptBundle( "~/jsCyC/usuarios" ).Include(
+                    "~/Scripts/CyC/usuarios.js"
+                ));
         }
     }
 }
