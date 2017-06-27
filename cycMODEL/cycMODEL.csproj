@@ -80,6 +80,9 @@
       <DependentUpon>ModelCyC.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SP_ADDUPD_USERS_Result.cs">
+      <DependentUpon>ModelCyC.tt</DependentUpon>
+    </Compile>
     <Compile Include="tblAval.cs">
       <DependentUpon>ModelCyC.tt</DependentUpon>
     </Compile>
