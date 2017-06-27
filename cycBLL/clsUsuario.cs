@@ -49,21 +49,6 @@ namespace cycBLL
             listadoUsuarios = cycDAL.clsUsuario._TraerTodosLosUsuarios();
 
 
-            //using (modelo.dbCyCEntities contexto = new modelo.dbCyCEntities())
-            //{
-            //    foreach (var usuario in contexto.tblUsuario.ToList())
-            //    {
-            //        listadoUsuarios.Add(new dto.Usuario.dtoUsuario
-            //        {
-            //            usuario = usuario.usuario,
-            //            apellidoMaterno = usuario.apellidoMaterno,
-            //            apellidoPaterno = usuario.apellidoPaterno,
-            //            idUsuario = usuario.idUsuario,
-            //            nombre = usuario.nombre
-            //        });
-            //    }
-            //}
-
             return listadoUsuarios;
         }
         #endregion 
