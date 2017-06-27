@@ -494,6 +494,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="SP_ADDUPD_USERS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="usuario" Type="varchar" Mode="In" />
+          <Parameter Name="contrasena" Type="varchar" Mode="In" />
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+          <Parameter Name="apellidoPaterno" Type="varchar" Mode="In" />
+          <Parameter Name="apellidoMaterno" Type="varchar" Mode="In" />
+          <Parameter Name="idUsuario" Type="int" Mode="In" />
+        </Function>
         <EntityContainer Name="dbCyCModelStoreContainer">
           <EntitySet Name="tblAval" EntityType="Self.tblAval" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblCliente" EntityType="Self.tblCliente" Schema="dbo" store:Type="Tables" />
@@ -766,6 +774,14 @@
             <End Role="tblCliente" EntitySet="tblCliente" />
             <End Role="tblRelSolicitudDocumento" EntitySet="tblRelSolicitudDocumento" />
           </AssociationSet>
+          <FunctionImport Name="SP_ADDUPD_USERS" ReturnType="Collection(dbCyCModel.SP_ADDUPD_USERS_Result)">
+            <Parameter Name="usuario" Mode="In" Type="String" />
+            <Parameter Name="contrasena" Mode="In" Type="String" />
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="apellidoPaterno" Mode="In" Type="String" />
+            <Parameter Name="apellidoMaterno" Mode="In" Type="String" />
+            <Parameter Name="idUsuario" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="tblConyugue">
           <Key>
@@ -1247,6 +1263,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <ComplexType Name="SP_ADDUPD_USERS_Result">
+          <Property Type="Int32" Name="idUsuario" Nullable="false" />
+          <Property Type="String" Name="usuario" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="contrasena" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="nombre" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="apellidoPaterno" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="apellidoMaterno" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="fechaCreacion" Nullable="true" MaxLength="10" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1496,6 +1521,19 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_ADDUPD_USERS" FunctionName="dbCyCModel.Store.SP_ADDUPD_USERS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbCyCModel.SP_ADDUPD_USERS_Result">
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+                <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="apellidoPaterno" ColumnName="apellidoPaterno" />
+                <ScalarProperty Name="apellidoMaterno" ColumnName="apellidoMaterno" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

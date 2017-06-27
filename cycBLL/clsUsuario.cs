@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using dto = DtoCyC;
 using modelo = cycMODEL;
-
+using cycDAL;
 namespace cycBLL
 {
    public class clsUsuario
@@ -43,22 +43,26 @@ namespace cycBLL
         /// <returns></returns>
         private static List<dto.Usuario.dtoUsuario> _BuscarUsuario(int? id = null)
         {
+            cycDAL.clsUsuario DALUsuario = new cycDAL.clsUsuario();
+         
             List<dto.Usuario.dtoUsuario> listadoUsuarios = new List<dto.Usuario.dtoUsuario>();
+            listadoUsuarios = cycDAL.clsUsuario._TraerTodosLosUsuarios();
 
-            using (modelo.dbCyCEntities contexto = new modelo.dbCyCEntities())
-            {
-                foreach (var usuario in contexto.tblUsuario.ToList())
-                {
-                    listadoUsuarios.Add(new dto.Usuario.dtoUsuario
-                    {
-                        usuario = usuario.usuario,
-                        apellidoMaterno = usuario.apellidoMaterno,
-                        apellidoPaterno = usuario.apellidoPaterno,
-                        idUsuario = usuario.idUsuario,
-                        nombre = usuario.nombre
-                    });
-                }
-            }
+
+            //using (modelo.dbCyCEntities contexto = new modelo.dbCyCEntities())
+            //{
+            //    foreach (var usuario in contexto.tblUsuario.ToList())
+            //    {
+            //        listadoUsuarios.Add(new dto.Usuario.dtoUsuario
+            //        {
+            //            usuario = usuario.usuario,
+            //            apellidoMaterno = usuario.apellidoMaterno,
+            //            apellidoPaterno = usuario.apellidoPaterno,
+            //            idUsuario = usuario.idUsuario,
+            //            nombre = usuario.nombre
+            //        });
+            //    }
+            //}
 
             return listadoUsuarios;
         }

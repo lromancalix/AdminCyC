@@ -10,16 +10,15 @@
 namespace cycMODEL
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class tblRelUsuarioRol
+    public partial class SP_ADDUPD_USERS_Result
     {
-        public int idRelUsuarioRol { get; set; }
-        public Nullable<int> idUsuario { get; set; }
-        public Nullable<int> idRol { get; set; }
-        public Nullable<int> fechaCreacion { get; set; }
-    
-        public virtual tblRol tblRol { get; set; }
-        public virtual tblUsuario tblUsuario { get; set; }
+        public int idUsuario { get; set; }
+        public string usuario { get; set; }
+        public string contrasena { get; set; }
+        public string nombre { get; set; }
+        public string apellidoPaterno { get; set; }
+        public string apellidoMaterno { get; set; }
+        public string fechaCreacion { get; set; }
     }
 }
