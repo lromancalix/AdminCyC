@@ -18,6 +18,6 @@ namespace DtoCyC.Usuario
         public string apellidoPaterno { get; set; }
         public string apellidoMaterno { get; set; }
         public string fechaCreacion { get; set; }
-        public dtoRol idRol { get; set; }
+        public string idRol { get; set; }
     }
 }
