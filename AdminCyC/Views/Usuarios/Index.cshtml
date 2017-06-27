@@ -69,6 +69,7 @@
                     <!-- /.box-tools -->
                 </div>
                 <!-- /.box-header -->
+                <!-- Tabla de usuarios -->
                 <div class="box-body no-padding">
                     <div class="mailbox-controls">
                         <!-- Check all button -->
@@ -115,17 +116,13 @@
                                     <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
                                     <td class="mailbox-date">28 mins ago</td>
                                 </tr>
-                               
-                                
-                                
-                               
                             </tbody>
                         </table>
                         <!-- /.table -->
                     </div>
                     <!-- /.mail-box-messages -->
                 </div>
-                <!-- /.box-body -->
+                <!--/ Tabla de usuarios -->
                 <div class="box-footer no-padding">
                     <div class="mailbox-controls">
                         <!-- Check all button -->
@@ -159,7 +156,7 @@
 </section>
 <!-- /.content -->
 
-<!-- Modal -->
+<!-- Modal de usuario -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -170,15 +167,18 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div role="form" class="center">
+                <div role="form" class="center validationEngineContainer" id="div-datosUsuario">
                     <!-- Nombre, app , apm -->
                     <div class="row">
                         <div class="col-md-4 col-sm-12 col-xs-12">
                             <div class="form-group">
                                 <label>Nombre:</label>
                                 <input type="text"
-                                       class="form-control"
-                                       placeholder="nombre">
+                                       id="txt-nombre"
+                                       class="form-control validate[required]"
+                                       placeholder="nombre"
+                                       data-errormessage-value-missing="campo requerido!"
+                                       >
                             </div>
                         </div>
 
@@ -186,8 +186,10 @@
                             <div class="form-group">
                                 <label>Apellido Paterno</label>
                                 <input type="text"
-                                       class="form-control"
-                                       placeholder="Apellido Paterno">
+                                       id="txt-app"
+                                       class="form-control validate[required]"
+                                       placeholder="Apellido Paterno"
+                                       data-errormessage-value-missing="campo requerido!">
                             </div>
                         </div>
 
@@ -195,6 +197,7 @@
                             <div class="form-group">
                                 <label>Apellido Materno</label>
                                 <input type="text"
+                                       id="txt-apm"
                                        class="form-control"
                                        placeholder="Apellido Materno">
                             </div>
@@ -209,8 +212,10 @@
                             <div class="form-group">
                                 <label>Usuario:</label>
                                 <input type="text"
-                                       class="form-control"
-                                       placeholder="usuario">
+                                       id="txt-usuario"
+                                       class="form-control validate[required]"
+                                       placeholder="usuario"
+                                       data-errormessage-value-missing="campo requerido!">
                             </div>
                         </div>
 
@@ -218,8 +223,10 @@
                             <div class="form-group">
                                 <label>Contraseña</label>
                                 <input type="text"
-                                       class="form-control"
-                                       placeholder="Apellido Paterno">
+                                       id="txt-contrasena"
+                                       class="form-control validate[required]"
+                                       placeholder="Contraseña"
+                                       data-errormessage-value-missing="campo requerido!">
                             </div>
                         </div>
 
@@ -227,8 +234,9 @@
                             <div class="form-group">
                                 <label>Confirmar contraseña</label>
                                 <input type="text"
-                                       class="form-control"
-                                       placeholder="Confirmar contraseña">
+                                       class="form-control validate[required]"
+                                       placeholder="Confirmar contraseña"
+                                       data-errormessage-value-missing="campo requerido!">
                             </div>
                         </div>
 
@@ -269,8 +277,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-danger">Eliminar <i class="glyphicon glyphicon-trash"></i> </button>
-                <button type="button" class="btn btn-primary">Guardar <i class="glyphicon glyphicon-floppy-save"></i> </button>
+                <button id="btn-eliminarUsuario" type="button" class="btn btn-danger">Eliminar <i class="glyphicon glyphicon-trash"></i> </button>
+                <button id="btn-guardarUsuario"  type="button" class="btn btn-primary">Guardar <i class="glyphicon glyphicon-floppy-disk"></i> </button>
             </div>
         </div>
     </div>

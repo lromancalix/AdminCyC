@@ -19,7 +19,7 @@ CyC.app = (function ($, window, document, undefined) {
         //alert(this.GetAppURLHost + action);
         try {
             $.ajax({
-                url:  action,
+                url: action,
                 type: "GET",
                 data: data,
                 contentType: "application/json; charset=utf-8",
