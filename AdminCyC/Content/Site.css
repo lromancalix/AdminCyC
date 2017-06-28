@@ -41,3 +41,10 @@ textarea {
 /*.form-control {
     max-width: none !important;
 }*/
+
+.solicitud-folio, .solicitud-status {
+    color: red !important;
+    font-size: x-large !important;
+    font-weight: bold !important;
+}
+

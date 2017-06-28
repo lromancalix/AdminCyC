@@ -58,7 +58,7 @@ namespace cycBLL
         #region Guarda los datos de un usuario
 
         #region Recibe los datos de un usuario para actualizarlos o crear un nuevo usuario
-        public dto.dtoRespuesta _GuardaUsuario(dto.Usuario.dtoUsuario usuario)
+        public static  dto.dtoRespuesta _GuardaUsuario(dto.Usuario.dtoUsuario usuario)
         {
             dto.dtoRespuesta respuesta = _CrearNuevoUsuario(usuario);
 

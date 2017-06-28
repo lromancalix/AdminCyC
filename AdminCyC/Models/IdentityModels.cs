@@ -31,5 +31,7 @@ namespace AdminCyC.Models
         }
 
         public System.Data.Entity.DbSet<DtoCyC.Usuario.dtoUsuario> dtoUsuarios { get; set; }
+
+        public System.Data.Entity.DbSet<DtoCyC.Solicitud.DtoSolicitud> dtoSolicitud { get; set; }
     }
 }

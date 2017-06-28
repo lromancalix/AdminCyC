@@ -57,6 +57,7 @@
     <Compile Include="Solicitud\dtoEmpleo.cs" />
     <Compile Include="Solicitud\dtoEstado.cs" />
     <Compile Include="Solicitud\dtoMunicipio.cs" />
+    <Compile Include="Solicitud\dtoSolicitud.cs" />
     <Compile Include="Usuario\dtoRol.cs" />
     <Compile Include="Usuario\dtoUsuario.cs" />
   </ItemGroup>

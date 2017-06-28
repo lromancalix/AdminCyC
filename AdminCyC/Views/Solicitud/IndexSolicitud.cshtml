@@ -1,0 +1,211 @@
+﻿@model DtoCyC.Solicitud.DtoSolicitud
+
+
+<section class="content-header">
+    <h1>Captura Solicitud</h1>
+    <ol class="breadcrumb">
+        <li>
+            <a href="#"
+               id="btn-nuevoUsuario"
+               class="btn btn-success active">Nuevo Solicitud</a>
+        </li>
+    </ol>
+</section>
+
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Inbox</h3>
+                    <div class="box-tools pull-right">
+                          <button class="btn btn-success">Guardar <i class="glyphicon glyphicon-floppy-save"></i></button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+
+                <div class="box-body">
+                    <!-- STATUS, FOLIO, SCORE -->
+                    <div class="row">
+                        <div class="col-md-12  form-inline">
+                            <div class="input-group  col-md-2 mb-2 mr-sm-2 mb-sm-0 pull-left">
+                                <div class="input-group-addon">Estatus</div>
+                                <input 
+                                       type="text" 
+                                       class="form-control solicitud-status" 
+                                       id="inlineFormInputGroup"
+                                       value="NUEVA"
+                                       placeholder="Username"
+                                       disabled>
+                            </div>
+
+                                <div class="input-group  col-md-2 mb-2 mr-sm-2 mb-sm-0 pull-right">
+                                    <div class="input-group-addon">Score</div>
+                                    <input type="text"
+                                           class="form-control solicitud-folio"
+                                           id="inlineFormInputGroup"
+                                           value="001"
+                                           placeholder="Username"
+                                           disabled>
+                                    </div>
+                                    <div class="input-group  col-md-2 mb-2 mr-sm-2 mb-sm-0 pull-right">
+                                        <div class="input-group-addon">Folio</div>
+                                        <input type="text"
+                                               class="form-control solicitud-folio"
+                                               id="inlineFormInputGroup"
+                                               value="1000"
+                                               placeholder="Username"
+                                               disabled>
+                                    </div>
+                               
+                               
+                        </div>
+
+                    </div>
+                    <!--/ STATUS, FOLIO, SCORE -->
+
+                    <!--DATOS DEL CLIENTE-->
+                    <div class="invoice" style="padding-top: 15px; box-shadow: 1px 1px 1px grey; margin: 0px !important">
+                            <h3 class="page-header">Datos del Cliente</h3>
+
+                        <div class="">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label>Nombre:</label>
+                                        <input type="text"
+                                        id="txt-nombre"
+                                        class="form-control validate[required]"
+                                        placeholder="nombre"
+                                        data-errormessage-value-missing="campo requerido!">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label>Apellido Paterno</label>
+                                        <input type="text"
+                                        id="txt-app"
+                                        class="form-control validate[required]"
+                                        placeholder="Apellido Paterno"
+                                        data-errormessage-value-missing="campo requerido!">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label>Apellido Materno</label>
+                                        <input type="text"
+                                        id="txt-apm"
+                                        class="form-control"
+                                        placeholder="Apellido Materno">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label>Fecha de nacimiento:</label>
+                                        <input type="text"
+                                               id="txt-fechaNacimiento"
+                                               class="form-control date validate[required]"
+                                               data-errormessage-value-missing="campo requerido!">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label>RFC:</label>
+                                        <input type="text"
+                                               id="txt-rfc"
+                                               class="form-control validate[required]"
+                                               placeholder="RFC"
+                                               data-errormessage-value-missing="campo requerido!">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label>Sexo:</label>
+                                        <select class="form-control">
+                                            <option value="1">Masculino</option>
+                                            <option value="2">Femenino</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12"><h4>Dirección</h4></div>
+
+                                <div class=" col-md-4">
+                                    <div class="form-group">
+                                        <label>Calle:</label>
+                                        <input type="text"
+                                               id="txt-calle"
+                                               class="form-control validate[required]"
+                                               placeholder="calle"
+                                               data-errormessage-value-missing="campo requerido!">
+                                    </div>
+                                </div>
+
+                                <div class=" col-md-1 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <label>Manzana:</label>
+                                        <input type="text"
+                                               id="txt-manzana"
+                                               class="form-control validate[required]"
+                                               placeholder="manzana"
+                                               data-errormessage-value-missing="campo requerido!">
+                                    </div>
+                                </div>
+                                <div class=" col-md-1 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <label>Lote:</label>
+                                        <input type="text"
+                                               id="txt-lote"
+                                               class="form-control validate[required]"
+                                               placeholder="lote"
+                                               data-errormessage-value-missing="campo requerido!">
+                                    </div>
+                                </div>
+
+                                <div class=" col-md-1 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <label>Ext:</label>
+                                        <input type="text"
+                                               id="txt-Ext"
+                                               class="form-control validate[required]"
+                                               placeholder="Ext"
+                                               data-errormessage-value-missing="campo requerido!">
+                                    </div>
+                                </div>
+
+                                <div class=" col-md-1 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <label>Edificio:</label>
+                                        <input type="text"
+                                               id="txt-Edificio"
+                                               class="form-control validate[required]"
+                                               placeholder="Edif"
+                                               data-errormessage-value-missing="campo requerido!">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="box-footer no-padding">
+
+                        </div>
+                   
+                    </div>
+                    <!--DATOS DEL CLIENTE-->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="~/Scripts/CyC/solicitud.js"></script>

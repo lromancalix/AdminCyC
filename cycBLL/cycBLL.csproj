@@ -30,9 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="cycDAL">
-      <HintPath>..\cycDAL\bin\Debug\cycDAL.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\cycMODEL\bin\Debug\EntityFramework.dll</HintPath>
     </Reference>
@@ -46,6 +43,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\cycDAL\cycDAL.csproj">
+      <Project>{d74746a9-331a-45a8-8afe-7242de8401f2}</Project>
+      <Name>cycDAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\cycMODEL\cycMODEL.csproj">
       <Project>{1b41741a-457a-4c81-9553-5d593e4681b1}</Project>
       <Name>cycMODEL</Name>

@@ -92,7 +92,7 @@
             <div class="pull-right hidden-xs">
                 <b>Version</b> @ViewContext.Controller.GetType().Assembly.GetName().Version
             </div>
-            <strong>Copyright &copy; @DateTime.Now.Year <a href="https://www.facebook.com/erikson.gomes">Erikson Melgarejo</a>.</strong>
+            <strong>@DateTime.Now.Year Administración de Crédito y Cobranza.</strong>
         </footer>
     </div>
     <!-- ./wrapper -->
@@ -112,6 +112,7 @@
     <script src="~/assets/plugins/iCheck/icheck.min.js"></script>
     <script src="~/Scripts/CyC/CyC.js"></script>
     @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/inputmask")
     <script>
         $(document).ready(function () {
             $('input[type="radio"]')
