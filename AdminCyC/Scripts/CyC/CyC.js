@@ -114,6 +114,18 @@ CyC.app = (function ($, window, document, undefined) {
         $("#" + idModal).modal("show");
     }
 
+    var InitDateInputMask = function () {
+        $(".date").inputmask("dd/mm/yyyy", { "placeholder": "dd/mm/yyyy" });
+    }
+
+    var InitDateFormat = function () {
+        $('.date').pickadate({
+            monthsFull: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+            weekdaysShort: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa'],
+            formatSubmit: 'yyyy/mm/dd'
+        });
+    }
+
     return {
         Mostrar: Mostrar,
         IsContentValid: IsContentValid,
@@ -123,7 +135,9 @@ CyC.app = (function ($, window, document, undefined) {
         GetJsonObject: GetJsonObject,
         GetAppURLHost: GetAppURLHost,
         InitModal: InitModal,
-        ShowModal: ShowModal
+        ShowModal: ShowModal,
+        InitDateInputMask: InitDateInputMask,
+        InitDateFormat: InitDateFormat
     }
 }(jQuery, window, document, navigator, undefined));
 

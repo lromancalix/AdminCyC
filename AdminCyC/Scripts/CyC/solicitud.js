@@ -1,4 +1,10 @@
-﻿$(document).ready(function () {
+﻿function IniciaMascaraTexboxFecha() {
+    CyC.app.InitDateFormat();
+}
 
-    $(".date").inputmask("dd/mm/yyyy", { "placeholder": "dd/mm/yyyy" });
+$(document).ready(function () {
+
+    IniciaMascaraTexboxFecha();
+    
+    alertify.alert("Se trata de un diálogo de alerta");
 });
