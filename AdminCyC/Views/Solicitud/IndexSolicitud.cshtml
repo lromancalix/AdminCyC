@@ -146,6 +146,7 @@
 
                             </div>
 
+                            <!--Estado civil, telefono-->
                             <div class="row">
 
                                 <div class="col-md-4 col-sm-12 col-xs-12">
@@ -159,10 +160,76 @@
                                     </div>
                                 </div>
 
+                                
+                                <div class="col-md-1 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label>Lada:</label>
+                                        <input type="text"
+                                                id="txt-ladaCel"
+                                                class="form-control validate[required]"
+                                                placeholder="000"
+                                                data-errormessage-value-missing="campo requerido!" />
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label>Celular:</label>
+                                        <input type="text"
+                                                id="txt-celular"
+                                                class="form-control validate[required]"
+                                                placeholder="10 digitos"
+                                                data-errormessage-value-missing="campo requerido!" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-1 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label>Lada:</label>
+                                        <input type="text"
+                                                id="txt-ladaTel"
+                                                class="form-control validate[required]"
+                                                placeholder="000"
+                                                data-errormessage-value-missing="campo requerido!" />
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label>Teléfono:</label>
+                                        <div class="input-group">
+
+                                        <input type="text"
+                                                id="txt-telefono"
+                                                class="form-control validate[required]"
+                                                placeholder="10 digitos"
+                                                data-errormessage-value-missing="campo requerido!" />
+                                        </div>
+                                    </div>
+                                </div>
+                                
                             </div>
 
-                            <!--Direccion-->
+                            <!-- Correo Electronico -->
                             <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            @*<span class="input-group-addon"><i class="fa fa-envelope"></i></span>*@
+                                            <input type="email" class="form-control" placeholder="Email">
+                                            <span class="input-group-addon"><strong>&#64;</strong></span>
+                                            <select class="form-control">
+                                                <option value="1">hotmail.com</option>
+                                                <option value="2">gmail.com</option>
+                                                <option value="2">sygno.com</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!--Direccion-->
+                            <div>
+                                <div class="row">
                                 <div class="col-md-12"><h4>Dirección</h4></div>
 
                                 <div class=" col-md-4">
@@ -234,7 +301,7 @@
 
                             </div>
 
-                            <div class="row">
+                                <div class="row">
 
                                 <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div class="form-group">
@@ -281,6 +348,40 @@
                                 </div>
 
                             </div>
+                            </div>
+
+                            <!--Empleo del cliente-->
+                            <div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h4>Datos del empleo del cliente </h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-md-6 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Giro, nombre de la empresa:</label>
+                                            <input type="text"
+                                                   id="txt-giroEmpleo"
+                                                   class="form-control"
+                                                   placeholder="Nombre de la empresa">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Calle:</label>
+                                            <input type="text"
+                                                   id="txt-calleEmpleo"
+                                                   class="form-control"
+                                                   placeholder="">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
 
                         </div>
 
