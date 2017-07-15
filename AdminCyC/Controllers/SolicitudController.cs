@@ -15,5 +15,27 @@ namespace AdminCyC.Controllers
         {
             return View();
         }
+
+        public ActionResult Cliente()
+        {
+            return View();
+        }
+
+        public ActionResult Conyugue()
+        {
+            return View();
+        }
+
+        public ActionResult Aval()
+        {
+            return View();
+        }
+
+        public ActionResult Referencias()
+        {
+            return View();
+        }
+
+
     }
 }

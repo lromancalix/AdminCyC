@@ -1,0 +1,356 @@
+﻿  <!--AVAL-->
+<div class="box box-primary">
+    <div class="box-header with-border">
+        <h3 class="box-title">Aval</h3>
+    </div>
+    <div class="box-body">
+        <!--NOMBRE DEL AVAL-->
+        <div class="row">
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label>Nombre:</label>
+                    <input type="text"
+                           id="txt-nombreAval"
+                           class="form-control validate[required]"
+                           placeholder="nombre"
+                           data-errormessage-value-missing="campo requerido!">
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label>Apellido Paterno</label>
+                    <input type="text"
+                           id="txt-appAval"
+                           class="form-control validate[required]"
+                           placeholder="Apellido Paterno"
+                           data-errormessage-value-missing="campo requerido!">
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label>Apellido Materno</label>
+                    <input type="text"
+                           id="txt-apmAval"
+                           class="form-control"
+                           placeholder="Apellido Materno">
+                </div>
+            </div>
+        </div>
+
+        <!--Fecha de nacimiento, RFC, sexo-->
+        <div class="row">
+
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label>Fecha de nacimiento:</label>
+                    <input type="text"
+                           id="txt-fechaNacimientoAval"
+                           class="form-control date validate[required]"
+                           data-errormessage-value-missing="campo requerido!">
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label>RFC:</label>
+                    <input type="text"
+                           id="txt-rfcAval"
+                           class="form-control validate[required]"
+                           placeholder="RFC"
+                           data-errormessage-value-missing="campo requerido!">
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label>Sexo:</label>
+                    <select class="form-control">
+                        <option value="1">Masculino</option>
+                        <option value="2">Femenino</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+        <!--Direccion AVAL-->
+        <div>
+            <div class="row">
+                <div class="col-md-12"><h4>Dirección</h4></div>
+
+                <div class=" col-md-4">
+                    <div class="form-group">
+                        <label>Calle:</label>
+                        <input type="text"
+                               id="txt-calleAval"
+                               class="form-control validate[required]"
+                               placeholder="calle"
+                               data-errormessage-value-missing="campo requerido!">
+                    </div>
+                </div>
+
+                <div class=" col-md-1 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Manzana:</label>
+                        <input type="text"
+                               id="txt-manzanaAval"
+                               class="form-control validate[required]"
+                               placeholder="manzana"
+                               data-errormessage-value-missing="campo requerido!">
+                    </div>
+                </div>
+
+                <div class=" col-md-1 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Lote:</label>
+                        <input type="text"
+                               id="txt-loteAval"
+                               class="form-control validate[required]"
+                               placeholder="lote"
+                               data-errormessage-value-missing="campo requerido!">
+                    </div>
+                </div>
+
+                <div class=" col-md-1 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Ext:</label>
+                        <input type="text"
+                               id="txt-ExtAval"
+                               class="form-control validate[required]"
+                               placeholder="Ext"
+                               data-errormessage-value-missing="campo requerido!">
+                    </div>
+                </div>
+
+                <div class=" col-md-1 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Edificio:</label>
+                        <input type="text"
+                               id="txt-EdificioAval"
+                               class="form-control validate[required]"
+                               placeholder="Edif"
+                               data-errormessage-value-missing="campo requerido!">
+                    </div>
+                </div>
+
+                <div class=" col-md-3 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Tiempo residencia:</label>
+                        <input type="text"
+                               id="txt-tiempoResidenciaAval"
+                               class="form-control validate[required]"
+                               placeholder="en años"
+                               data-errormessage-value-missing="campo requerido!">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <label>Cruzamientos:</label>
+                        <input type="text"
+                               id="txt-cruzamientosAval"
+                               class="form-control validate[required]"
+                               placeholder="calle"
+                               data-errormessage-value-missing="campo requerido!">
+                    </div>
+                </div>
+
+                <div class=" col-md-2 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Código Postal:</label>
+                        <input type="text"
+                               id="txt-CodigoPostalAval"
+                               class="form-control validate[required]"
+                               placeholder="00000"
+                               data-errormessage-value-missing="campo requerido!">
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <label>Estado:</label>
+                        <select class="form-control">
+                            <option value="1">Soltero</option>
+                            <option value="2">Casado</option>
+                            <option value="2">Divorciado</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <label>Ciudad:</label>
+                        <select class="form-control">
+                            <option value="1">Soltero</option>
+                            <option value="2">Casado</option>
+                            <option value="2">Divorciado</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!--TELEFONO DEL AVAL-->
+        <div class="row">
+            <div class="col-md-1 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label>Lada:</label>
+                    <input type="text"
+                           id="txt-ladaCelAval"
+                           class="form-control validate[required]"
+                           placeholder="000"
+                           data-errormessage-value-missing="campo requerido!" />
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label>Celular:</label>
+                    <input type="text"
+                           id="txt-celularAval"
+                           class="form-control validate[required]"
+                           placeholder="10 digitos"
+                           data-errormessage-value-missing="campo requerido!" />
+                </div>
+            </div>
+        </div>
+        <!--EMPLEO DEL AVAL-->
+        <div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>Datos del empleo del Aval </h4>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <label>Giro, nombre de la empresa:</label>
+                        <input type="text"
+                               id="txt-giroEmpleoCAval"
+                               class="form-control"
+                               placeholder="Nombre de la empresa">
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <label>Calle:</label>
+                        <input type="text"
+                               id="txt-calleEmpleoAval"
+                               class="form-control"
+                               placeholder="Calle">
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <label>Colonia:</label>
+                        <input type="text"
+                               id="txt-coloniaEmpleoAval"
+                               class="form-control"
+                               placeholder="Colonia">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <label>Cruzamiento:</label>
+                        <input type="text"
+                               id="txt-cruzamientoEmpleoAval"
+                               class="form-control"
+                               placeholder="Cruzamientos de la empresa">
+                    </div>
+                </div>
+
+                <div class=" col-md-1 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Manzana:</label>
+                        <input type="text"
+                               id="txt-manzanaAval"
+                               class="form-control validate[required]"
+                               placeholder="manzana"
+                               data-errormessage-value-missing="campo requerido!">
+                    </div>
+                </div>
+
+                <div class=" col-md-1 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Lote:</label>
+                        <input type="text"
+                               id="txt-loteAval"
+                               class="form-control validate[required]"
+                               placeholder="lote"
+                               data-errormessage-value-missing="campo requerido!">
+                    </div>
+                </div>
+
+                <div class=" col-md-1 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Ext:</label>
+                        <input type="text"
+                               id="txt-ExtAval"
+                               class="form-control validate[required]"
+                               placeholder="Ext"
+                               data-errormessage-value-missing="campo requerido!">
+                    </div>
+                </div>
+
+                <div class="col-md-1 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <label>Lada:</label>
+                        <input type="text"
+                               id="txt-ladaEmpleoAval"
+                               class="form-control"
+                               placeholder="lada">
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <label>Teléfono:</label>
+                        <input type="text"
+                               id="txt-telefonoEmpleoAval"
+                               class="form-control"
+                               placeholder="Teléfonos">
+                    </div>
+                </div>
+
+
+
+                <div class=" col-md-1 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Ext:</label>
+                        <input type="text"
+                               id="txt-ExtAval"
+                               class="form-control validate[required]"
+                               placeholder="Ext"
+                               data-errormessage-value-missing="campo requerido!">
+                    </div>
+                </div>
+
+
+                <div class="col-md-2 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <label>Antigüedad:</label>
+                        <input type="text"
+                               id="txt-antiguedadEmpleoAval"
+                               class="form-control"
+                               placeholder="antiguedad">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div><!--/AVAL-->

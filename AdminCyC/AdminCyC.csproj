@@ -670,6 +670,10 @@
     <Content Include="Views\Usuarios\Index.cshtml" />
     <Content Include="Views\Usuarios\vpDetalleUsuario.cshtml" />
     <Content Include="Views\Solicitud\IndexSolicitud.cshtml" />
+    <Content Include="Views\Solicitud\Cliente.cshtml" />
+    <Content Include="Views\Solicitud\Conyugue.cshtml" />
+    <Content Include="Views\Solicitud\Aval.cshtml" />
+    <Content Include="Views\Solicitud\Referencias.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
